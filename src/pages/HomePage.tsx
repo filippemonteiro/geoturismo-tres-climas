@@ -1,11 +1,11 @@
 import { Hero } from "../components/Hero";
+import { RoutesSection } from "../components/RoutesSection";
 
 export function HomePage() {
   return (
     <main>
       <Hero />
-      <div id="roteiros" className="h-screen bg-serra">
-      </div>
+      <RoutesSection />
     </main>
   );
 }
