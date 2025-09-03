@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+:root {
+  --litoral: #1e88e5;
+  --serra: #388e3c;
+  --sertao: #f57c00;
+}
+
+.bg-litoral {
+  background-color: var(--litoral);
+}
+
+.bg-serra {
+  background-color: var(--serra);
+}
+
+.bg-sertao {
+  background-color: var(--sertao);
+}
+
+.text-litoral {
+  color: var(--litoral);
+}
+
+.text-serra {
+  color: var(--serra);
+}
+
+.text-sertao {
+  color: var(--sertao);
+}
