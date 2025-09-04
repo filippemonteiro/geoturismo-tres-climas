@@ -1,166 +1,58 @@
 export const routesDetails = [
   {
-    name: "Roteiro Sol & Praia",
+    name: "Roteiro Sol e Praia",
     points: [
-      {
-        name: "Pedra do Sal",
-        description: "Formação rochosa icônica na costa.",
-      },
-      {
-        name: "Praia da Baleia",
-        description: "Principal praia urbana de Itapipoca.",
-      },
-      {
-        name: "Foz do Rio Mundaú",
-        description: "Encontro do rio com o mar, formando um belo estuário.",
-      },
-      {
-        name: "Dunas da Baleia",
-        description: "Conjunto de dunas móveis com paisagem exuberante.",
-      },
-      {
-        name: "Rio Gavião",
-        description: "Pequeno rio que deságua na Praia da Baleia.",
-      },
-      {
-        name: "Maceió",
-        description: "Vila de pescadores com piscinas naturais na maré baixa.",
-      },
-      {
-        name: "Lagoa do Humaitá",
-        description: "Corpo d'água costeiro com rica biodiversidade.",
-      },
-      {
-        name: "Praia do Arpoador",
-        description: "Praia mais rústica, ideal para contemplação.",
-      },
-      {
-        name: "Barra do Poço Velho",
-        description: "Foz de um pequeno rio, com manguezais.",
-      },
+      { name: "1 - Praia dos Apliques", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "2 - Barrinha do Maceió", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "3 - Mirante do Morro Verde", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "4 - Barra do Bodé", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "5 - Mirante do Bodé", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "6 - Praia da Baleia", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "7 - Praia das Pedrinhas", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "9 - Mirante do Mantoçoca", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "10 - Lençóis Baleiense", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
     ],
   },
   {
     name: "Roteiro das Águas",
     points: [
-      {
-        name: "Açude Poço Verde",
-        description: "Principal reservatório de água da região.",
-      },
-      {
-        name: "Rio Cruxati",
-        description: "Importante rio perene que corta o município.",
-      },
-      {
-        name: "Cachoeira do Arapari",
-        description: "Queda d'água na região serrana.",
-      },
-      {
-        name: "Bica da Gameleira",
-        description: "Fonte de água natural na comunidade de Ipu.",
-      },
-      {
-        name: "Olho d'água de Assunção",
-        description: "Nascente que forma um oásis no sertão.",
-      },
-      {
-        name: "Açude Quandú",
-        description: "Reservatório importante para a comunidade local.",
-      },
-      {
-        name: "Rio dos Macacos",
-        description: "Afluente do Rio Cruxati com mata ciliar preservada.",
-      },
-      {
-        name: "Cachoeira véu de noiva",
-        description: "Outra bela queda d'água na serra.",
-      },
-      {
-        name: "Barragem do Gameleira",
-        description: "Estrutura de contenção de água com valor paisagístico.",
-      },
+      { name: "11 - Lagoa da Mangabeira", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "12 - Lagoa do Mato", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "13 - Lagoa do Humaitá", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "14 - Lagoa das Mercês", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "15 - Açude do Poço Verde", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "16 - Açude da Ipu Mazagão", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "17 - Cachoeira de São Daniel", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "18 - Bica da Canoa", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "19 - Ajude do Quandú", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
     ],
   },
   {
     name: "Roteiro Pré-Histórico",
     points: [
-      {
-        name: "Sítio Fechado",
-        description: "Sítio arqueológico com pinturas rupestres.",
-      },
-      {
-        name: "Sítio Itacoatiara",
-        description: "Inscrições rupestres em rochas graníticas.",
-      },
-      {
-        name: "Pedra Ferrada",
-        description: "Formação rochosa com gravuras pré-históricas.",
-      },
-      {
-        name: "Gruta dos Pingos",
-        description: "Pequena gruta com vestígios de ocupação antiga.",
-      },
-      {
-        name: "Pedra do Letreiro",
-        description: "Laje de pedra com diversas inscrições.",
-      },
-      {
-        name: "Sítio Arqueológico do Baixio",
-        description: "Área com vestígios de cerâmica indígena.",
-      },
-      {
-        name: "Pedra da Santa",
-        description: "Rocha com inscrições que lembram figuras religiosas.",
-      },
-      {
-        name: "Fósseis da megafauna",
-        description: "Localidade com registros de animais pré-históricos.",
-      },
-      {
-        name: "Sítio Perímetro",
-        description: "Outro importante sítio com arte rupestre.",
-      },
+      { name: "35 - Museu Pré-Histórico do Município de Itapipoca", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "36 - Sítio Paleoarqeológico Taboca-Lajinha", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "37 - Sítio Paelontológico do Jirau", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "38 - Pedra da Sínia", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "39 - Sítio Paleontológico João Cativo", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "40 - Pedra Ferrada", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "41 - Sítio Paleontológico da Pedra D'água do Deserto", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "42 - Pedra da Arara", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
     ],
   },
   {
     name: "Roteiro das Pedras",
     points: [
-      {
-        name: "Pedra do Agudo",
-        description: "Monólito com formato pontiagudo, marco da paisagem.",
-      },
-      {
-        name: "Pedra da Andorinha",
-        description: "Formação rochosa que serve de abrigo para aves.",
-      },
-      {
-        name: "Pedra do Frade",
-        description: "Rocha que se assemelha à figura de um monge.",
-      },
-      {
-        name: "Pedra da Ema",
-        description: "Outra formação rochosa com formato peculiar.",
-      },
-      {
-        name: "Lajedo da Aroeira",
-        description: "Grande afloramento rochoso plano.",
-      },
-      {
-        name: "Pedra do Capitão",
-        description: "Ponto elevado com vista panorâmica da região.",
-      },
-      {
-        name: "Serrote do Mudo",
-        description: "Pequena serra com formações de granito.",
-      },
-      {
-        name: "Pedra da Caveira",
-        description: "Rocha cuja forma lembra um crânio.",
-      },
-      {
-        name: "Pedra da Baleia",
-        description: "Grande rocha arredondada que lembra o mamífero.",
-      },
+      { name: "43 - Pedra do Braga", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "44 - Mirante de Santarém", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "45 - Pico de Assunção", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "46 - Pedra do Itapicu", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "47 - Pedra do Cágado", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "48 - Pedra da Itacoatiara", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "49 - Mirante da Santa Rita", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "50 - Mirante dos Picos", description: "Descrição em breve.", imageUrl: "/images/placeholder.log" },
+      { name: "51 - Mirante da Serrinha", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      { name: "52 - Pedra Lascada", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
     ],
   },
 ];
