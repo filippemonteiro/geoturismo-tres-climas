@@ -1,7 +1,15 @@
+import { useParams } from "react-router-dom";
 import { Tabs } from "../components/Tabs";
 import { routesDetails } from "../data/routes";
 
 export function RoutesPage() {
+  const { slug } = useParams();
+
+  const activeRouteIndex = routesDetails.findIndex(
+    (route) => route.slug === slug
+  );
+  const initialTabIndex = activeRouteIndex !== -1 ? activeRouteIndex : 0;
+
   const tabs = routesDetails.map((route) => ({
     label: route.name,
     content: (
@@ -26,13 +34,8 @@ export function RoutesPage() {
         <h1 className="text-5xl font-bold font-heading text-center text-gray-800">
           Roteiros Geoturísticos
         </h1>
-        <p className="mt-4 text-xl text-gray-600 font-sans text-center max-w-3xl mx-auto">
-          Explore em detalhes cada um dos percursos que revelam a geodiversidade
-          de Itapipoca.
-        </p>
-
         <div className="mt-16">
-          <Tabs tabs={tabs} />
+          <Tabs tabs={tabs} initialTabIndex={initialTabIndex} />
         </div>
       </div>
     </div>

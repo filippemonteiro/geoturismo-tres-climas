@@ -1,58 +1,214 @@
+function createSlug(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/ & /g, "-")
+    .replace(/ /g, "-")
+    .replace(/[^\w-]+/g, "");
+}
+
 export const routesDetails = [
   {
     name: "Roteiro Sol e Praia",
+    slug: createSlug("Roteiro Sol e Praia"),
     points: [
-      { name: "1 - Praia dos Apliques", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "2 - Barrinha do Maceió", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "3 - Mirante do Morro Verde", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "4 - Barra do Bodé", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "5 - Mirante do Bodé", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "6 - Praia da Baleia", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "7 - Praia das Pedrinhas", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "9 - Mirante do Mantoçoca", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "10 - Lençóis Baleiense", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      {
+        name: "1 - Praia dos Apliques",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "2 - Barrinha do Maceió",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "3 - Mirante do Morro Verde",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "4 - Barra do Bodé",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "5 - Mirante do Bodé",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "6 - Praia da Baleia",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "7 - Praia das Pedrinhas",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "9 - Mirante do Mantoçoca",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "10 - Lençóis Baleiense",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
     ],
   },
   {
     name: "Roteiro das Águas",
+    slug: createSlug("Roteiro das Águas"),
     points: [
-      { name: "11 - Lagoa da Mangabeira", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "12 - Lagoa do Mato", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "13 - Lagoa do Humaitá", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "14 - Lagoa das Mercês", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "15 - Açude do Poço Verde", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "16 - Açude da Ipu Mazagão", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "17 - Cachoeira de São Daniel", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "18 - Bica da Canoa", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "19 - Ajude do Quandú", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      {
+        name: "11 - Lagoa da Mangabeira",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "12 - Lagoa do Mato",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "13 - Lagoa do Humaitá",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "14 - Lagoa das Mercês",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "15 - Açude do Poço Verde",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "16 - Açude da Ipu Mazagão",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "17 - Cachoeira de São Daniel",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "18 - Bica da Canoa",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "19 - Ajude do Quandú",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
     ],
   },
   {
     name: "Roteiro Pré-Histórico",
+    slug: createSlug("Roteiro Pré-Histórico"),
     points: [
-      { name: "35 - Museu Pré-Histórico do Município de Itapipoca", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "36 - Sítio Paleoarqeológico Taboca-Lajinha", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "37 - Sítio Paelontológico do Jirau", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "38 - Pedra da Sínia", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "39 - Sítio Paleontológico João Cativo", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "40 - Pedra Ferrada", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "41 - Sítio Paleontológico da Pedra D'água do Deserto", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "42 - Pedra da Arara", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      {
+        name: "35 - Museu Pré-Histórico do Município de Itapipoca",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "36 - Sítio Paleoarqeológico Taboca-Lajinha",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "37 - Sítio Paelontológico do Jirau",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "38 - Pedra da Sínia",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "39 - Sítio Paleontológico João Cativo",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "40 - Pedra Ferrada",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "41 - Sítio Paleontológico da Pedra D'água do Deserto",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "42 - Pedra da Arara",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
     ],
   },
   {
     name: "Roteiro das Pedras",
+    slug: createSlug("Roteiro das Pedras"),
     points: [
-      { name: "43 - Pedra do Braga", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "44 - Mirante de Santarém", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "45 - Pico de Assunção", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "46 - Pedra do Itapicu", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "47 - Pedra do Cágado", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "48 - Pedra da Itacoatiara", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "49 - Mirante da Santa Rita", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "50 - Mirante dos Picos", description: "Descrição em breve.", imageUrl: "/images/placeholder.log" },
-      { name: "51 - Mirante da Serrinha", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
-      { name: "52 - Pedra Lascada", description: "Descrição em breve.", imageUrl: "/images/placeholder.jpg" },
+      {
+        name: "43 - Pedra do Braga",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "44 - Mirante de Santarém",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "45 - Pico de Assunção",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "46 - Pedra do Itapicu",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "47 - Pedra do Cágado",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "48 - Pedra da Itacoatiara",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "49 - Mirante da Santa Rita",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "50 - Mirante dos Picos",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.log",
+      },
+      {
+        name: "51 - Mirante da Serrinha",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
+      {
+        name: "52 - Pedra Lascada",
+        description: "Descrição em breve.",
+        imageUrl: "/images/placeholder.jpg",
+      },
     ],
   },
 ];

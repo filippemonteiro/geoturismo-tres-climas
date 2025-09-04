@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 
-type Tab = {
-  label: string;
-  content: React.ReactNode;
-};
-
+type Tab = { label: string; content: React.ReactNode };
 interface TabsProps {
   tabs: Tab[];
+  initialTabIndex?: number;
 }
 
-export function Tabs({ tabs }: TabsProps) {
-  const [activeTabIndex, setActiveTabIndex] = useState(0);
+export function Tabs({ tabs, initialTabIndex = 0 }: TabsProps) {
+  const [activeTabIndex, setActiveTabIndex] = useState(initialTabIndex);
 
   return (
     <div>
