@@ -8,6 +8,7 @@ export function Header() {
   const navLinks = [
     { label: "Início", path: "/" },
     { label: "Roteiros", path: "/roteiros" },
+    { label: "Itapipoca", path: "/itapipoca" },
     { label: "Sobre", path: "/sobre" },
     { label: "Contato", path: "/contato" },
   ];

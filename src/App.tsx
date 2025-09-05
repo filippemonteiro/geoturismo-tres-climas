@@ -5,6 +5,7 @@ import { RoutesPage } from "./pages/RoutesPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { AboutPage } from "./pages/AboutPage";
 import { ContactPage } from "./pages/ContactPage";
+import { ItapipocaPage } from "./pages/ItapipocaPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/roteiros" element={<RoutesPage />} />
           <Route path="/roteiros/:slug" element={<RoutesPage />} />
+          <Route path="/itapipoca" element={<ItapipocaPage />} />
           <Route path="/sobre" element={<AboutPage />} />
           <Route path="/contato" element={<ContactPage />} />
         </Routes>
