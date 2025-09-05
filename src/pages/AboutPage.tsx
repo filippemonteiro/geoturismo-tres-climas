@@ -1,9 +1,9 @@
 export function AboutPage() {
   const teamMembers = [
     {
-      name: "Nome do Coordenador(a)",
+      name: "Nome do Coordenador",
       role: "Coordenador(a) do Projeto",
-      imageUrl: "https://via.placeholder.com/150",
+      imageUrl: "./assets/team-member-1.jpg",
     },
     {
       name: "Nome do Membro 2",
@@ -75,7 +75,7 @@ export function AboutPage() {
             {teamMembers.map((member) => (
               <div key={member.name} className="flex flex-col items-center">
                 <img
-                  src={member.imageUrl}
+                  src={member.imageUrl || "Sem imagem disponível"}
                   alt={`Foto de ${member.name}`}
                   className="w-40 h-40 rounded-full object-cover shadow-lg mb-4"
                 />
