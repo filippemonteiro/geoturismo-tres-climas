@@ -36,24 +36,29 @@ export function GlossaryPage() {
             placeholder="Pesquisar termo..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full p-4 border-2 border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-litoral font-sans text-lg"
+            className="w-full p-4 border-2 border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-litoral font-sans text-lg"
           />
         </div>
 
         <div className="space-y-8">
           {filteredTerms.length > 0 ? (
-            filteredTerms.map((item) => (
-              <AnimatedSection key={item.term}>
-                <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-serra">
-                  <h3 className="text-2xl font-bold font-heading text-gray-800">
-                    {item.term}
-                  </h3>
-                  <p className="font-sans text-gray-700 mt-2 text-lg leading-relaxed">
-                    {item.definition}
-                  </p>
-                </div>
-              </AnimatedSection>
-            ))
+            filteredTerms.map((item) => {
+              const themeBorderColorClass = `border-${item.theme}`;
+              return (
+                <AnimatedSection key={item.term}>
+                  <div
+                    className={`bg-gray-50 p-6 rounded-lg border-l-4 ${themeBorderColorClass}`}
+                  >
+                    <h3 className="text-2xl font-bold font-heading text-gray-800">
+                      {item.term}
+                    </h3>
+                    <p className="font-sans text-gray-700 mt-2 text-lg leading-relaxed">
+                      {item.definition}
+                    </p>
+                  </div>
+                </AnimatedSection>
+              );
+            })
           ) : (
             <div className="text-center py-12">
               <p className="font-sans text-xl text-gray-500">

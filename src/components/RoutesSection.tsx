@@ -15,12 +15,7 @@ export function RoutesSection() {
               <RouteCard
                 title={route.name}
                 description="Clique para ver os detalhes do roteiro."
-                colorTheme={
-                  route.name.includes("Praia") ||
-                  route.name.includes("Histórico")
-                    ? "desert"
-                    : "mountain"
-                }
+                theme={route.theme as "litoral" | "serra" | "sertao"}
               />
             </Link>
           ))}

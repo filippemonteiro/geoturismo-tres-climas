@@ -17,27 +17,32 @@ export function GeossitiosPage() {
         </header>
 
         <div className="space-y-16">
-          {routesDetails.map((route) => (
-            <AnimatedSection key={route.slug}>
-              <section>
-                <h2 className="text-3xl font-bold font-heading text-gray-800 border-b-2 pb-4 mb-8">
-                  {route.name}
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {route.points.map((point) => (
-                    <div key={point.name} className="bg-gray-50 p-6 rounded-lg shadow-md h-full border-l-4 border-litoral hover:shadow-xl hover:border-sertao transition-all">
-                      <h3 className="text-xl font-bold font-heading text-gray-800">
-                        {point.name}
-                      </h3>
-                      <p className="font-sans text-gray-600 mt-2">
-                        {point.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </section>
-            </AnimatedSection>
-          ))}
+          {routesDetails.map((route) => {
+            const themeTextColorClass = `text-${route.theme}`;
+            const themeBorderColorClass = `border-${route.theme}`;
+
+            return (
+              <AnimatedSection key={route.slug}>
+                <section>
+                  <h2 className={`text-3xl font-bold font-heading ${themeTextColorClass} border-b-2 pb-4 mb-8`}>
+                    {route.name}
+                  </h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {route.points.map((point) => (
+                      <div key={point.name} className={`bg-gray-50 p-6 rounded-lg shadow-md h-full border-l-4 ${themeBorderColorClass} hover:shadow-xl transition-all`}>
+                        <h3 className="text-xl font-bold font-heading text-gray-800">
+                          {point.name}
+                        </h3>
+                        <p className="font-sans text-gray-600 mt-2">
+                          {point.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </AnimatedSection>
+            )
+          })}
         </div>
       </div>
     </div>

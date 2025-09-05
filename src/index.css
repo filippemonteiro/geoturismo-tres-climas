@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-/* Força atualização - cores personalizadas do projeto */
 :root {
   --cor-litoral: #1e88e5;
   --cor-serra: #388e3c;
@@ -24,4 +23,14 @@
 }
 .text-sertao {
   color: var(--cor-sertao) !important;
+}
+
+.border-litoral {
+  border-color: var(--cor-litoral) !important;
+}
+.border-serra {
+  border-color: var(--cor-serra) !important;
+}
+.border-sertao {
+  border-color: var(--cor-sertao) !important;
 }
