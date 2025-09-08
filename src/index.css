@@ -1,31 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --litoral: #1e88e5;
-  --serra: #388e3c;
-  --sertao: #f57c00;
+  --cor-litoral: #1e88e5;
+  --cor-serra: #388e3c;
+  --cor-sertao: #f57c00;
 }
 
 .bg-litoral {
-  background-color: var(--litoral);
+  background-color: var(--cor-litoral) !important;
 }
-
-.bg-serra {
-  background-color: var(--serra);
-}
-
-.bg-sertao {
-  background-color: var(--sertao);
-}
-
 .text-litoral {
-  color: var(--litoral);
+  color: var(--cor-litoral) !important;
 }
-
+.bg-serra {
+  background-color: var(--cor-serra) !important;
+}
 .text-serra {
-  color: var(--serra);
+  color: var(--cor-serra) !important;
+}
+.bg-sertao {
+  background-color: var(--cor-sertao) !important;
+}
+.text-sertao {
+  color: var(--cor-sertao) !important;
 }
 
-.text-sertao {
-  color: var(--sertao);
+.border-litoral {
+  border-color: var(--cor-litoral) !important;
+}
+.border-serra {
+  border-color: var(--cor-serra) !important;
+}
+.border-sertao {
+  border-color: var(--cor-sertao) !important;
 }
