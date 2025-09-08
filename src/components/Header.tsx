@@ -9,8 +9,8 @@ export function Header() {
     { label: "Início", path: "/" },
     { label: "Roteiros", path: "/roteiros" },
     { label: "Geossítios", path: "/geossitios" },
-    { label: "Glossário", path: "/glossario" },
     { label: "Itapipoca", path: "/itapipoca" },
+    { label: "Glossário", path: "/glossario" },
     { label: "Sobre", path: "/sobre" },
     { label: "Contato", path: "/contato" },
   ];
