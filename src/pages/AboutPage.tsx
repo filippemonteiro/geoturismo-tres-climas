@@ -1,24 +1,12 @@
 import { AnimatedSection } from "../components/AnimatedSection";
-import teamMember1 from "../assets/team-member-1.png";
+import ricardoImage from "../assets/team-member-1.png";
 
 export function AboutPage() {
-  const teamMembers = [
-    {
-      name: "Ricardo",
-      role: "Coordenador do Projeto",
-      imageUrl: teamMember1,
-    },
-    {
-      name: "Membro da Equipe 2",
-      role: "Pesquisador(a) / Geólogo(a)",
-      imageUrl: "",
-    },
-    {
-      name: "Membro da Equipe 3",
-      role: "Desenvolvedor(a) Web",
-      imageUrl: "",
-    },
-  ];
+  const projectLead = {
+    name: "Ricardo Matos Machado",
+    role: "Geógrafo e Professor de Geografia. Mestre em Desenvolvimento e Meio Ambiente (PRODEMA - UFC). Doutorando em Geografia (UFC).",
+    imageUrl: ricardoImage,
+  };
 
   return (
     <div className="bg-white">
@@ -76,30 +64,22 @@ export function AboutPage() {
         </AnimatedSection>
 
         <AnimatedSection>
-          <section className="text-center">
+          <section className="text-center bg-gray-50 py-16 rounded-lg">
             <h2 className="text-4xl font-bold font-heading text-gray-800 mb-12">
-              Nossa Equipe
+              O Responsável pelo Projeto
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-              {teamMembers.map((member) => (
-                <div key={member.name} className="flex flex-col items-center">
-                  {member.imageUrl ? (
-                    <img
-                      src={member.imageUrl}
-                      alt={`Foto de ${member.name}`}
-                      className="w-40 h-40 rounded-full object-cover shadow-lg mb-4 bg-gray-200"
-                    />
-                  ) : (
-                    <div className="w-40 h-40 rounded-full bg-gray-200 flex items-center justify-center shadow-lg mb-4">
-                      <span className="text-gray-500">Sem Foto</span>
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold font-heading text-litoral">
-                    {member.name}
-                  </h3>
-                  <p className="font-sans text-gray-600">{member.role}</p>
-                </div>
-              ))}
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center max-w-sm">
+                <img
+                  src={projectLead.imageUrl}
+                  alt={`Foto de ${projectLead.name}`}
+                  className="w-40 h-40 rounded-full object-cover shadow-lg mb-4 bg-gray-200"
+                />
+                <h3 className="text-2xl font-bold font-heading text-litoral">
+                  {projectLead.name}
+                </h3>
+                <p className="font-sans text-gray-600 mt-2">{projectLead.role}</p>
+              </div>
             </div>
           </section>
         </AnimatedSection>
