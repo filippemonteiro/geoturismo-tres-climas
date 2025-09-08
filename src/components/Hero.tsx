@@ -1,4 +1,4 @@
-import heroImageUrl from "../assets/formacoes-rochosas-itapipoca.jpg";
+import heroImageUrl from "../assets/itapipoca-geodiversidade.jpg";
 
 export function Hero() {
   return (
