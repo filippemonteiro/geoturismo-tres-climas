@@ -55,7 +55,7 @@ export const routesDetails = [
         coordinates: { lat: -3.4589, lng: -39.5532 },
       },
       {
-        name: "8 - Mirante do Mantoçoca",
+        name: "8 - Mirante do Maritacaca",
         description:
           "Ponto de observação natural com vista espetacular do encontro do Rio Mundaú com o mar, na divisa com o município de Trairi.",
         coordinates: { lat: -3.4735, lng: -39.5781 },
@@ -135,49 +135,43 @@ export const routesDetails = [
     theme: "sertao",
     points: [
       {
-        name: "1 - Museu Pré-Histórico de Itapipoca",
-        description:
-          "Instituição que abriga um acervo vital da megafauna pleistocênica e artefatos arqueológicos encontrados na região, essencial para a geoeducação.",
-        coordinates: { lat: -3.495, lng: -39.58 },
-      },
-      {
-        name: "2 - Sítio Paleoarqueológico Taboca-Lajinha",
+        name: "1 - Sítio Paleoarqueológico Taboca-Lajinha",
         description:
           "Lajedo com caldeirões rochosos e registros fósseis, um geossítio que revela a interação de processos geológicos e a vida pré-histórica.",
         coordinates: { lat: -3.4633, lng: -39.6865 },
       },
       {
-        name: "3 - Sítio Paleontológico do Jirau",
+        name: "2 - Sítio Paleontológico do Jirau",
         description:
           "Local de grande importância científica, com registros de fósseis que ajudam a contar a história da vida e do clima na pré-história do Ceará.",
         coordinates: { lat: -3.4111, lng: -39.612 },
       },
       {
-        name: "4 - Pedra da Sínia",
+        name: "3 - Pedra da Sínia",
         description:
           "Formação rochosa com inscrições rupestres, testemunho da presença de antigos habitantes e sua relação com a paisagem.",
         coordinates: { lat: -3.3905, lng: -39.6591 },
       },
       {
-        name: "5 - Sítio Paleontológico João Cativo",
+        name: "4 - Sítio Paleontológico João Cativo",
         description:
           "Geossítio onde foram encontrados fósseis da megafauna, como preguiças-gigantes, evidenciando a rica biodiversidade do passado.",
         coordinates: { lat: -3.4289, lng: -39.7123 },
       },
       {
-        name: "6 - Pedra Ferrada",
+        name: "5 - Pedra Ferrada",
         description:
           "Afloramento rochoso com notáveis inscrições rupestres, que funcionava como um local de expressão e registro para povos pré-históricos.",
         coordinates: { lat: -3.3758, lng: -39.7001 },
       },
       {
-        name: "7 - Sítio Paleontológico da Pedra D'água do Deserto",
+        name: "6 - Sítio Paleontológico da Pedra D'água do Deserto",
         description:
           "Local de grande beleza cênica e importância científica, com fósseis e formações geológicas únicas na paisagem sertaneja.",
         coordinates: { lat: -3.3521, lng: -39.7284 },
       },
       {
-        name: "8 - Pedra da Arara",
+        name: "7 - Pedra da Arara",
         description:
           "Inselberg com painéis de inscrições rupestres, representando um marco cultural e geológico de grande valor para o patrimônio local.",
         coordinates: { lat: -3.344, lng: -39.7599 },
