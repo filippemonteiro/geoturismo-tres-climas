@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-type Tab = {
+interface Tab {
   label: string;
   content: React.ReactNode;
   theme: "litoral" | "serra" | "sertao";
-};
+}
 
 interface TabsProps {
   tabs: Tab[];
@@ -14,60 +14,52 @@ interface TabsProps {
 export function Tabs({ tabs, initialTabIndex = 0 }: TabsProps) {
   const [activeTabIndex, setActiveTabIndex] = useState(initialTabIndex);
 
-  const handleTabClick = (index: number) => {
-    setActiveTabIndex(activeTabIndex === index ? -1 : index);
+  const themeClasses = {
+    litoral: {
+      border: "border-blue-500",
+      text: "text-blue-600",
+    },
+    serra: {
+      border: "border-green-500",
+      text: "text-green-600",
+    },
+    sertao: {
+      border: "border-yellow-500",
+      text: "text-yellow-600",
+    },
   };
 
   return (
-    <div className="md:border-b md:border-gray-200">
-      <div className="md:flex md:space-x-8">
-        {tabs.map((tab, index) => {
-          const isActive = activeTabIndex === index;
-          const activeClasses = `border-${tab.theme} text-${tab.theme}`;
-          const inactiveClasses =
-            "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300";
+    <div>
+      <div className="border-b border-gray-200">
+        {/* Adicionado 'flex-wrap' para permitir que as abas quebrem para a linha de baixo */}
+        <ul className="flex flex-wrap -mb-px justify-center">
+          {tabs.map((tab, index) => {
+            const isActive = index === activeTabIndex;
+            const activeTheme = themeClasses[tab.theme];
 
-          return (
-            <div
-              key={tab.label}
-              className="border-b border-gray-200 md:border-b-0"
-            >
-              <button
-                onClick={() => handleTabClick(index)}
-                className={`
-                  w-full text-left p-4 font-medium text-lg flex justify-between items-center
-                  md:w-auto md:p-1 md:py-4 md:border-b-2
-                  ${isActive ? activeClasses : inactiveClasses}
-                `}
-              >
-                {tab.label}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className={`h-5 w-5 md:hidden transition-transform ${
-                    isActive ? "transform rotate-180" : ""
+            return (
+              <li key={tab.label} className="mr-2 mb-2">
+                {" "}
+                {/* Adicionado 'mb-2' para espaçamento vertical no wrap */}
+                <button
+                  onClick={() => setActiveTabIndex(index)}
+                  className={`inline-block p-4 text-lg font-medium text-center rounded-t-lg ${
+                    isActive
+                      ? `border-b-2 ${activeTheme.border} ${activeTheme.text}`
+                      : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
                   }`}
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </button>
-              {isActive && (
-                <div className="py-8 px-4 md:hidden">{tab.content}</div>
-              )}
-            </div>
-          );
-        })}
+                  {tab.label}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
       </div>
-      {activeTabIndex !== -1 && (
-        <div className="hidden md:block py-8">
-          {tabs[activeTabIndex].content}
-        </div>
-      )}
+      <div className="pt-10">
+        {tabs[activeTabIndex] && tabs[activeTabIndex].content}
+      </div>
     </div>
   );
 }

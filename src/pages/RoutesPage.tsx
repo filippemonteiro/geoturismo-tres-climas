@@ -1,9 +1,12 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { Tabs } from "../components/Tabs";
 import { routesDetails } from "../data/routes";
+import { ImageModal } from "../components/ImageModal";
 
 export function RoutesPage() {
   const { slug } = useParams();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const activeRouteIndex = routesDetails.findIndex(
     (route) => route.slug === slug
@@ -28,25 +31,24 @@ export function RoutesPage() {
                 {point.name}
               </h3>
 
-              {/* Lógica de Renderização Condicional para Imagens */}
               {point.images && point.images.length > 0 && (
                 <div className="mb-4">
                   {point.images.length === 1 ? (
-                    // CASO 1: APENAS UMA IMAGEM
                     <img
                       src={point.images[0]}
                       alt={`Imagem de ${point.name}`}
-                      className="rounded-lg object-cover w-full h-96 shadow"
+                      className="rounded-lg object-cover w-full h-96 shadow cursor-pointer transition-transform hover:scale-105"
+                      onClick={() => setSelectedImage(point.images[0])}
                     />
                   ) : (
-                    // CASO 2: MÚLTIPLAS IMAGENS (GALERIA)
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       {point.images.map((imgSrc, index) => (
                         <img
                           key={index}
                           src={imgSrc}
                           alt={`Imagem ${index + 1} de ${point.name}`}
-                          className="rounded-lg object-cover w-full h-64 shadow"
+                          className="rounded-lg object-cover w-full h-64 shadow cursor-pointer transition-transform hover:scale-105"
+                          onClick={() => setSelectedImage(imgSrc)}
                         />
                       ))}
                     </div>
@@ -90,6 +92,12 @@ export function RoutesPage() {
         </h1>
         <Tabs tabs={tabs} initialTabIndex={initialTabIndex} />
       </div>
+
+      <ImageModal
+        src={selectedImage}
+        alt="Imagem expandida"
+        onClose={() => setSelectedImage(null)}
+      />
     </div>
   );
 }
