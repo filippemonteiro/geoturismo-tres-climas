@@ -10,9 +10,11 @@ export function Header() {
   return (
     <header className="bg-white shadow-md fixed w-full z-50">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        <div className="text-xl font-bold text-gray-800 font-heading">
+        <div className="text-xl font-bold font-heading">
           <Link to="/" onClick={() => setIsOpen(false)}>
-            GeoTurismo Três Climas
+            <span className="text-[#F57C00]">GeoTurismo</span>{" "}
+            <span className="text-[#1E88E5]">Três</span>{" "}
+            <span className="text-[#388E3C]">Climas</span>
           </Link>
         </div>
 
@@ -20,6 +22,7 @@ export function Header() {
           <li>
             <NavLink
               to="/"
+              end
               className={({ isActive }) =>
                 isActive ? activeLinkClasses : linkClasses
               }
@@ -97,6 +100,7 @@ export function Header() {
             <li>
               <NavLink
                 to="/"
+                end
                 className={({ isActive }) =>
                   isActive ? activeLinkClasses : linkClasses
                 }
