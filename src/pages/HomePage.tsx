@@ -1,4 +1,4 @@
-import backgroundImage from "../assets/background-home.jpg";
+import backgroundImage from "../assets/background-home.png";
 
 export function HomePage() {
   return (
