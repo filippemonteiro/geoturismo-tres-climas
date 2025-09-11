@@ -136,7 +136,8 @@ export const routesDetails = [
   {
     name: "Roteiro Pré-Histórico",
     slug: createSlug("Roteiro Pré-Histórico"),
-    description: "",
+    description:
+      "O Roteiro Pré-Histórico destaca sítios paleontológicos e arqueológicos profundamente associados à geomorfologia da superfície sertaneja e do Maciço de Uruburetama. São áreas de alto valor científico por registrarem a presença de megafauna extinta, tanques fossilíferos, arte rupestre e estruturas naturais ligadas à ocupação humana pré-colonial, compondo um patrimônio integrado de natureza geológica, arqueológica e cultural. A seguir, a síntese qualificada dos principais pontos.",
     theme: "sertao",
     points: [
       {
