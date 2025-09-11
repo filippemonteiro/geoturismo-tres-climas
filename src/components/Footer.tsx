@@ -1,85 +1,83 @@
 import { Link } from "react-router-dom";
 
 export function Footer() {
-  const navLinks = [
-    { label: "Início", path: "/" },
-    { label: "Roteiros", path: "/roteiros" },
-    { label: "Geossítios", path: "/geossitios" },
-    { label: "Itapipoca", path: "/itapipoca" },
-    { label: "Glossário", path: "/glossario" },
-    { label: "Sobre", path: "/sobre" },
-    { label: "Contato", path: "/contato" },
-  ];
-
-  const socialLinks = [
-    {
-      label: "Instagram",
-      url: "https://www.instagram.com/geoturismotresclimas/",
-    },
-  ];
-
   return (
-    <footer className="bg-gray-800 text-white">
-      <div className="container mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="md:col-span-1">
-          <h3 className="font-bold text-2xl font-heading">
-            GeoTurismo <span className="text-litoral">3 Climas</span>
-          </h3>
-          <p className="mt-4 text-gray-400 font-sans">
-            Um Projeto de doutorado dedicado à divulgação e conservação da
-            geodiversidade de Itapipoca, Ceará.
-          </p>
-        </div>
+    <footer className="bg-gray-800 text-white pt-12 pb-8">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+          {/* Coluna 1: Sobre o Projeto */}
+          <div>
+            <h3 className="font-bold text-lg mb-3 font-heading">
+              GeoTurismo Três Climas
+            </h3>
+            <p className="text-gray-400 text-sm">
+              Plataforma de divulgação científica e geoturística da Rota dos
+              Três Climas, Itapipoca-CE.
+            </p>
+          </div>
 
-        <div className="md:col-span-1">
-          <h4 className="font-heading font-bold uppercase tracking-wider text-gray-400">
-            Navegação
-          </h4>
-          <nav className="mt-4 grid grid-cols-2 gap-x-8 gap-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="font-sans hover:text-litoral transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
+          {/* Coluna 2: Navegação */}
+          <div>
+            <h3 className="font-bold text-lg mb-3 font-heading">Navegue</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="text-gray-400 hover:text-white text-sm">
+                  Apresentação
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/locais-de-estudo"
+                  className="text-gray-400 hover:text-white text-sm"
+                >
+                  Locais de Estudo
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/destaques"
+                  className="text-gray-400 hover:text-white text-sm"
+                >
+                  Destaques
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contato"
+                  className="text-gray-400 hover:text-white text-sm"
+                >
+                  Contato
+                </Link>
+              </li>
+            </ul>
+          </div>
 
-        <div>
-          <h4 className="font-heading font-bold uppercase tracking-wider text-gray-400">
-            Redes Sociais
-          </h4>
-          <div className="mt-4 flex flex-col space-y-2">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-sans hover:text-litoral transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* Coluna 3: Realização */}
+          <div>
+            <h3 className="font-bold text-lg mb-3 font-heading">Realização</h3>
+            <p className="text-gray-400 text-sm font-semibold">
+              Ricardo Matos Machado
+            </p>
+            <p className="text-gray-400 text-sm mt-1">
+              Dissertação de Mestrado apresentada ao Programa de Pós-Graduação
+              em Desenvolvimento e Meio Ambiente (PRODEMA/UFC).
+            </p>
           </div>
         </div>
-      </div>
-      <div className="bg-gray-900 py-4">
-        <div className="container mx-auto text-center text-sm text-gray-500 font-sans">
-          <p>
+
+        {/* Linha divisória, Copyright e Créditos */}
+        <div className="mt-10 pt-8 border-t border-gray-700 text-center">
+          <p className="text-gray-500 text-sm">
             &copy; {new Date().getFullYear()} GeoTurismo Três Climas. Todos os
             direitos reservados.
           </p>
-          <p className="mt-1">
+          <p className="text-gray-500 text-sm mt-2">
             Desenvolvido por{" "}
             <a
               href="https://filippemonteiro.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-white transition-colors"
+              className="underline hover:text-white"
             >
               Filippe Monteiro
             </a>
