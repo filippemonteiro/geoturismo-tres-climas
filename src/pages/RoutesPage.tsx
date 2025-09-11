@@ -29,7 +29,7 @@ export function RoutesPage() {
                 </p>
                 {point.coordinates && (
                   <a
-                    href={`https://www.google.com/maps/search/?api=1&query=$${point.coordinates.lat},${point.coordinates.lng}`}
+                    href={`https://www.google.com/maps/search/?api=1&query=${point.coordinates.lat},${point.coordinates.lng}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`mt-3 inline-block ${themeColorClass} text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105`}
