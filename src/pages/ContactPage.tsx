@@ -1,112 +1,95 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export function ContactPage() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [lgpdConsent, setLgpdConsent] = useState(false);
-  const [status, setStatus] = useState('');
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
-    if (!lgpdConsent) {
-      setStatus('Você precisa aceitar os termos de privacidade.');
-      return;
-    }
-    console.log({ name, email, message });
-    setStatus('Mensagem enviada com sucesso! (Simulação)');
-    
-    setName('');
-    setEmail('');
-    setMessage('');
-    setLgpdConsent(false);
-  };
+  const [agreed, setAgreed] = useState(false);
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-white">
       <div className="container mx-auto px-4 py-24 pt-32">
-        <header className="text-center mb-12">
-          <h1 className="text-5xl font-bold font-heading text-gray-800">
-            Entre em Contato
-          </h1>
-          <p className="mt-4 text-xl text-gray-600 font-sans max-w-2xl mx-auto">
-            Tem alguma dúvida, sugestão ou interesse em parcerias? Fale conosco!
-          </p>
-        </header>
-
-        <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-          <form onSubmit={handleSubmit} noValidate>
-            <div className="mb-6">
-              <label htmlFor="name" className="block text-gray-700 font-bold mb-2 font-sans">
+        <h1 className="text-5xl font-bold font-heading text-center text-gray-800 mb-4">
+          Contato
+        </h1>
+        <p className="text-center text-gray-600 mb-12">
+          Tem alguma dúvida, sugestão ou encontrou algum erro? Fale conosco.
+        </p>
+        <div className="max-w-2xl mx-auto">
+          <form className="space-y-6">
+            <div>
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Nome
               </label>
               <input
                 type="text"
                 id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-litoral"
-                required
+                name="name"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
-            
-            <div className="mb-6">
-              <label htmlFor="email" className="block text-gray-700 font-bold mb-2 font-sans">
-                Email
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                E-mail
               </label>
               <input
                 type="email"
                 id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-litoral"
-                required
+                name="email"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
-
-            <div className="mb-6">
-              <label htmlFor="message" className="block text-gray-700 font-bold mb-2 font-sans">
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Mensagem
               </label>
               <textarea
                 id="message"
-                rows={5}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-litoral"
-                required
+                name="message"
+                rows={4}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               ></textarea>
             </div>
-            
-            <div className="mb-6">
-              <label htmlFor="lgpd" className="flex items-center">
+
+            {/* Seção de Consentimento LGPD */}
+            <div className="flex items-start">
+              <div className="flex items-center h-5">
                 <input
+                  id="consent"
+                  name="consent"
                   type="checkbox"
-                  id="lgpd"
-                  checked={lgpdConsent}
-                  onChange={(e) => setLgpdConsent(e.target.checked)}
-                  className="h-5 w-5 text-litoral focus:ring-litoral border-gray-300 rounded"
-                  required
+                  checked={agreed}
+                  onChange={(e) => setAgreed(e.target.checked)}
+                  className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded"
                 />
-                <span className="ml-2 text-gray-600 font-sans text-sm">
-                  Eu concordo em compartilhar meus dados para fins de contato, conforme a LGPD.
-                </span>
-              </label>
+              </div>
+              <div className="ml-3 text-sm">
+                <label htmlFor="consent" className="font-medium text-gray-700">
+                  Eu concordo com o uso dos meus dados
+                </label>
+                <p className="text-gray-500">
+                  Ao marcar esta caixa, você concorda que os dados fornecidos
+                  serão utilizados exclusivamente para o retorno do contato. Não
+                  compartilharemos suas informações.
+                </p>
+              </div>
             </div>
 
             <div className="text-center">
               <button
                 type="submit"
-                className="bg-litoral text-white font-bold font-heading py-3 px-8 rounded-full uppercase tracking-wider hover:bg-blue-700 transition-colors"
+                disabled={!agreed}
+                className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
                 Enviar Mensagem
               </button>
             </div>
-
-            {status && (
-              <p className="mt-4 text-center text-sm font-sans">{status}</p>
-            )}
           </form>
         </div>
       </div>
