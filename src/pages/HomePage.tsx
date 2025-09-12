@@ -7,10 +7,12 @@ export function HomePage() {
         className="relative h-screen bg-cover bg-center flex items-center justify-center text-center text-white"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+        <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
         <div className="relative z-10 p-8">
           <h1 className="text-5xl md:text-7xl font-bold font-heading drop-shadow-lg">
-            Geoturismo Três Climas
+            <span className="text-[#F57C00]">Geoturismo</span>{" "}
+            <span className="text-[#1E88E5]">Três</span>{" "}
+            <span className="text-[#388E3C]">Climas</span>
           </h1>
           <p className="text-xl md:text-2xl mt-4 font-light drop-shadow-md">
             Conhecendo a Geodiversidade de Itapipoca, Ceará
@@ -36,7 +38,7 @@ export function HomePage() {
                 Nosso objetivo é proporcionar aos geoturistas, à comunidade
                 científica e à população local um material digital, interativo e
                 de fácil acesso sobre as espetacularidades geomorfológicas e o
-                potencial para o Geoturismo na região, que abrange paisagens de
+                potencial para o geoturismo na região, que abrange paisagens de
                 litoral, serra e sertão.
               </p>
             </div>

@@ -8,7 +8,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           <div>
             <h3 className="font-bold text-lg mb-3 font-heading text-stone-800">
-              Geoturismo Três Climas
+              <span className="text-[#F57C00]">Geoturismo</span>{" "}
+              <span className="text-[#1E88E5]">Três</span>{" "}
+              <span className="text-[#388E3C]">Climas</span>
             </h3>
             <p className="text-sm">
               Plataforma de divulgação científica e geoturística da Rota dos
