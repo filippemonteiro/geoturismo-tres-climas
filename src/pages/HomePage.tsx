@@ -28,18 +28,20 @@ export function HomePage() {
             </h2>
             <div className="prose max-w-none text-left md:text-lg text-gray-700 space-y-4">
               <p>
-                Este website foi criado com a iniciativa primordial de
-                apresentar os roteiros geoturísticos da Rota dos Três Climas de
-                Itapipoca-CE, produto da dissertação de mestrado de Ricardo
-                Matos Machado, desenvolvida no âmbito do Programa de
-                Pós-Graduação em Desenvolvimento e Meio Ambiente (PRODEMA/UFC).
+                Este website foi criado com o intuito de apresentar os roteiros
+                geoturísticos estabelecidos a partir da Rota Turística dos Três
+                Climas de Itapipoca (Ceará), a qual é decorrente da lei orgânica
+                062/2023. Com ênfase nas formas de relevo e como produto da Tese
+                de Doutorado de Ricardo Matos Machado, desenvolvida no âmbito do
+                Programa de Pós-Graduação em Geografia da Universidade Federal
+                do Ceará (UFC).
               </p>
               <p>
-                Nosso objetivo é proporcionar aos geoturistas, à comunidade
-                científica e à população local um material digital, interativo e
-                de fácil acesso sobre as espetacularidades geomorfológicas e o
-                potencial para o geoturismo na região, que abrange paisagens de
-                litoral, serra e sertão.
+                O objetivo é proporcionar aos geoturistas, à comunidade
+                científica e à população local um material digital interativo e
+                de fácil acesso sobre as potencialidades geomorfológicas e
+                geoturísticas do território itapipoquense, o qual é contemplado
+                com paisagens litorâneas, serranas e sertanejas.
               </p>
             </div>
           </div>
