@@ -7,41 +7,50 @@ export function HighlightsPage() {
         </h1>
 
         <div className="max-w-4xl mx-auto space-y-8">
-          <section id="geologia" className="bg-white p-8 rounded-lg shadow border">
+          <section
+            id="geologia"
+            className="bg-white p-8 rounded-lg shadow border"
+          >
             <h2 className="text-3xl font-bold font-heading text-gray-800 mb-4">
               Geologia e Geomorfologia
             </h2>
             <p className="font-sans text-gray-700 leading-relaxed">
-              Nesta seção, será apresentado o contexto geológico e geomorfológico
-              de Itapipoca. Serão abordadas as principais formações rochosas, como
-              os inselbergs graníticos do Maciço de Uruburetama e os sedimentos da
-              Formação Barreiras, explicando como esses elementos esculpiram a
-              paisagem dos Três Climas.
+              Nesta seção, será apresentado o contexto geológico e
+              geomorfológico de Itapipoca. Serão abordadas as principais
+              formações rochosas, como os inselbergs graníticos do Maciço de
+              Uruburetama e os sedimentos da Formação Barreiras, explicando como
+              esses elementos esculpiram a paisagem dos Três Climas.
             </p>
           </section>
 
-          <section id="paleontologia" className="bg-white p-8 rounded-lg shadow border">
+          <section
+            id="paleontologia"
+            className="bg-white p-8 rounded-lg shadow border"
+          >
             <h2 className="text-3xl font-bold font-heading text-gray-800 mb-4">
               Paleontologia
             </h2>
             <p className="font-sans text-gray-700 leading-relaxed">
-              Itapipoca é um dos mais importantes depósitos fossilíferos do Ceará.
-              Esta seção detalhará a megafauna pleistocênica encontrada na região,
-              como preguiças-gigantes e mastodontes, explicando a importância dos
-              tanques fossilíferos para a pesquisa paleontológica no Nordeste do
-              Brasil.
+              Itapipoca é um dos mais importantes depósitos fossilíferos do
+              Ceará. Esta seção detalhará a megafauna pleistocênica encontrada
+              na região, como preguiças-gigantes e mastodontes, explicando a
+              importância dos tanques fossilíferos para a pesquisa
+              paleontológica no Nordeste do Brasil.
             </p>
           </section>
 
-          <section id="biodiversidade" className="bg-white p-8 rounded-lg shadow border">
+          <section
+            id="biodiversidade"
+            className="bg-white p-8 rounded-lg shadow border"
+          >
             <h2 className="text-3xl font-bold font-heading text-gray-800 mb-4">
               Biodiversidade
             </h2>
             <p className="font-sans text-gray-700 leading-relaxed">
               A diversidade de ambientes (praia, serra e sertão) resulta em uma
-              rica biodiversidade. Serão destacados aqui os principais ecossistemas
-              e espécies da fauna e flora local, relacionando-os com a
-              geodiversidade da Rota dos Três Climas.
+              rica biodiversidade. Serão destacados aqui os principais
+              ecossistemas e espécies da fauna e flora local, relacionando-os
+              com a geodiversidade da Rota dos Três Climas.
             </p>
           </section>
         </div>

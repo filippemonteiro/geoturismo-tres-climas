@@ -93,7 +93,7 @@ export function RoutesPage() {
     <div className="bg-stone-50">
       <div className="container mx-auto px-4 py-24 pt-32">
         <h1 className="text-5xl font-bold font-heading text-center text-gray-800 mb-16">
-          Locais de Estudo
+          Locais de Interesse Geomorfológico
         </h1>
         <Tabs tabs={tabs} initialTabIndex={initialTabIndex} />
       </div>
