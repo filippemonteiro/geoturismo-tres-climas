@@ -48,14 +48,6 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to="/referencias"
-                  className="hover:text-[#A67B5B] text-sm transition-colors"
-                >
-                  Referências
-                </Link>
-              </li>
-              <li>
-                <Link
                   to="/contato"
                   className="hover:text-[#A67B5B] text-sm transition-colors"
                 >

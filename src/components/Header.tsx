@@ -39,15 +39,6 @@ export function Header() {
         Destaques
       </NavLink>
       <NavLink
-        to="/referencias"
-        className={({ isActive }) =>
-          isActive ? activeLinkClasses : linkClasses
-        }
-        onClick={() => setIsOpen(false)}
-      >
-        Referências
-      </NavLink>
-      <NavLink
         to="/contato"
         className={({ isActive }) =>
           isActive ? activeLinkClasses : linkClasses
@@ -61,7 +52,9 @@ export function Header() {
 
   const downloadButton = (
     <a
-      href="/LEI MUNICIPAL_062_2023_0000001__.pdf"
+      href="https://drive.google.com/file/d/1yFzql_8Lu-ydnCj4bzzp9fOZjga3LihH/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
       download
       className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#C89B78] hover:bg-[#A67B5B] transition-colors"
     >
@@ -89,7 +82,7 @@ export function Header() {
 
         <div className="md:hidden">
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(true)}
             className="text-gray-600 focus:outline-none"
           >
             <svg
@@ -110,7 +103,6 @@ export function Header() {
         </div>
       </nav>
 
-      {/* Menu Lateral Mobile */}
       <div
         className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
