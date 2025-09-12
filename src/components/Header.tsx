@@ -5,8 +5,8 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const linkClasses =
-    "text-gray-700 hover:text-[#A67B5B] font-medium transition-colors";
-  const activeLinkClasses = "text-[#A67B5B] font-bold";
+    "text-gray-700 hover:text-[#A67B5B] font-medium transition-colors whitespace-nowrap";
+  const activeLinkClasses = "text-[#A67B5B] font-bold whitespace-nowrap";
 
   const navLinks = (
     <>
@@ -27,7 +27,7 @@ export function Header() {
         }
         onClick={() => setIsOpen(false)}
       >
-        Locais de Estudo
+        Locais de Interesse Geomorfológico
       </NavLink>
       <NavLink
         to="/destaques"
@@ -36,7 +36,7 @@ export function Header() {
         }
         onClick={() => setIsOpen(false)}
       >
-        Destaques
+        Destaques e Curiosidades
       </NavLink>
       <NavLink
         to="/contato"
@@ -52,11 +52,9 @@ export function Header() {
 
   const downloadButton = (
     <a
-      href="https://drive.google.com/file/d/1yFzql_8Lu-ydnCj4bzzp9fOZjga3LihH/view?usp=sharing"
-      target="_blank"
-      rel="noopener noreferrer"
+      href="/LEI MUNICIPAL_062_2023_0000001__.pdf"
       download
-      className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#C89B78] hover:bg-[#A67B5B] transition-colors"
+      className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#C89B78] hover:bg-[#A67B5B] transition-colors whitespace-nowrap"
     >
       Baixar Lei Municipal
     </a>
@@ -64,7 +62,7 @@ export function Header() {
 
   return (
     <header className="bg-white shadow-md fixed w-full z-50">
-      <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <nav className="container mx-auto px-4 lg:px-6 py-4 flex justify-between items-center">
         <div className="text-xl font-bold">
           <Link to="/">
             <span className="text-[#F57C00]">Geoturismo</span>{" "}
@@ -73,14 +71,14 @@ export function Header() {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center space-x-6">
-          <div className="flex items-center space-x-6">{navLinks}</div>
-          <div className="pl-6 ml-6 border-l border-gray-300">
+        <div className="hidden lg:flex items-center space-x-4">
+          <div className="flex items-center space-x-4">{navLinks}</div>
+          <div className="pl-4 ml-4 border-l border-gray-300">
             {downloadButton}
           </div>
         </div>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(true)}
             className="text-gray-600 focus:outline-none"
@@ -104,9 +102,9 @@ export function Header() {
       </nav>
 
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg transform ${
+        className={`fixed top-0 left-0 h-full w-78 bg-white shadow-lg transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out z-50 md:hidden`}
+        } transition-transform duration-300 ease-in-out z-50 lg:hidden`}
       >
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
@@ -142,7 +140,7 @@ export function Header() {
       {isOpen && (
         <div
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-black opacity-50 z-40 md:hidden"
+          className="fixed inset-0 bg-black opacity-50 z-40 lg:hidden"
         ></div>
       )}
     </header>

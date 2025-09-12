@@ -35,7 +35,7 @@ export function Footer() {
                   to="/locais-de-estudo"
                   className="hover:text-[#A67B5B] text-sm transition-colors"
                 >
-                  Locais de Estudo
+                  Locais de Interesse Geomorfológico
                 </Link>
               </li>
               <li>
@@ -43,7 +43,7 @@ export function Footer() {
                   to="/destaques"
                   className="hover:text-[#A67B5B] text-sm transition-colors"
                 >
-                  Destaques
+                  Destaques e Curiosidades
                 </Link>
               </li>
               <li>

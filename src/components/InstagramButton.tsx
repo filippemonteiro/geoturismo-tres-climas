@@ -5,7 +5,7 @@ export function InstagramButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Acesse nosso perfil no Instagram"
-      className="fixed bottom-6 right-6 z-50 bg-white p-3 rounded-full shadow-lg transition-transform hover:scale-110"
+      className="fixed bottom-6 right-4 z-50 bg-white p-3 rounded-full shadow-lg transition-transform hover:scale-110"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
