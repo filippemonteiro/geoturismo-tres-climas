@@ -5,17 +5,81 @@ import { RoutesPage } from "./pages/RoutesPage";
 import { HighlightsPage } from "./pages/HighlightsPage";
 import { ContactPage } from "./pages/ContactPage";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { GeotourismPage } from "./pages/GeotourismPage.tsx";
+import { GeodiversityPage } from "./pages/GeodiversityPage";
+import { GeomorphologicalHeritagePage } from "./pages/GeomorphologicalHeritagePage";
 
 export function App() {
   return (
     <Router>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<MainLayout><HomePage /></MainLayout>} />
-        <Route path="/locais-de-estudo" element={<MainLayout><RoutesPage /></MainLayout>} />
-        <Route path="/locais-de-estudo/:slug" element={<MainLayout><RoutesPage /></MainLayout>} />
-        <Route path="/destaques" element={<MainLayout><HighlightsPage /></MainLayout>} />
-        <Route path="/contato" element={<MainLayout><ContactPage /></MainLayout>} />
+        <Route
+          path="/"
+          element={
+            <MainLayout>
+              <HomePage />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/presentation/geotourism"
+          element={
+            <MainLayout>
+              <GeotourismPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/presentation/geodiversity"
+          element={
+            <MainLayout>
+              <GeodiversityPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/presentation/geomorphological-heritage"
+          element={
+            <MainLayout>
+              <GeomorphologicalHeritagePage />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/locais-de-estudo"
+          element={
+            <MainLayout>
+              <RoutesPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/locais-de-estudo/:slug"
+          element={
+            <MainLayout>
+              <RoutesPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/destaques"
+          element={
+            <MainLayout>
+              <HighlightsPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/contato"
+          element={
+            <MainLayout>
+              <ContactPage />
+            </MainLayout>
+          }
+        />
       </Routes>
     </Router>
   );

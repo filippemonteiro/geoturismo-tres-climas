@@ -1,31 +1,100 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownContainerRef = useRef<HTMLDivElement>(null);
 
   const linkClasses =
     "text-gray-700 hover:text-[#A67B5B] font-medium transition-colors whitespace-nowrap";
   const activeLinkClasses = "text-[#A67B5B] font-bold whitespace-nowrap";
 
+  const dropdownLinkClasses =
+    "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#A67B5B]";
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen((prev) => !prev);
+  };
+
+  const closeAllMenus = () => {
+    setIsDropdownOpen(false);
+    setIsMenuOpen(false);
+  };
+  
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownContainerRef.current && !dropdownContainerRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const navLinks = (
     <>
-      <NavLink
-        to="/"
-        end
-        className={({ isActive }) =>
-          isActive ? activeLinkClasses : linkClasses
-        }
-        onClick={() => setIsOpen(false)}
+      <div 
+        className="relative group" 
+        ref={dropdownContainerRef}
       >
-        Apresentação
-      </NavLink>
+        <button
+          onClick={handleDropdownToggle}
+          className={`${linkClasses} flex items-center`}
+          aria-haspopup="true"
+          aria-expanded={isDropdownOpen}
+        >
+          Apresentação
+          <svg
+            className="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M19 9l-7 7-7-7"
+            ></path>
+          </svg>
+        </button>
+        <div
+          className={`absolute top-full left-0 w-64 bg-white rounded-md shadow-lg z-50 py-1 
+                     lg:hidden ${isDropdownOpen ? 'block' : 'hidden'}
+                     lg:group-hover:block lg:hidden`}
+        >
+          <NavLink
+            to="/presentation/geotourism"
+            className={dropdownLinkClasses}
+            onClick={closeAllMenus}
+          >
+            Geoturismo
+          </NavLink>
+          <NavLink
+            to="/presentation/geodiversity"
+            className={dropdownLinkClasses}
+            onClick={closeAllMenus}
+          >
+            O que é Geodiversidade
+          </NavLink>
+          <NavLink
+            to="/presentation/geomorphological-heritage"
+            className={dropdownLinkClasses}
+            onClick={closeAllMenus}
+          >
+            Patrimônio Geomorfológico
+          </NavLink>
+        </div>
+      </div>
       <NavLink
         to="/locais-de-estudo"
         className={({ isActive }) =>
           isActive ? activeLinkClasses : linkClasses
         }
-        onClick={() => setIsOpen(false)}
+        onClick={closeAllMenus}
       >
         Locais de Interesse Geomorfológico
       </NavLink>
@@ -34,7 +103,7 @@ export function Header() {
         className={({ isActive }) =>
           isActive ? activeLinkClasses : linkClasses
         }
-        onClick={() => setIsOpen(false)}
+        onClick={closeAllMenus}
       >
         Destaques e Curiosidades
       </NavLink>
@@ -43,7 +112,7 @@ export function Header() {
         className={({ isActive }) =>
           isActive ? activeLinkClasses : linkClasses
         }
-        onClick={() => setIsOpen(false)}
+        onClick={closeAllMenus}
       >
         Contato
       </NavLink>
@@ -54,7 +123,7 @@ export function Header() {
     <a
       href="/LEI MUNICIPAL_062_2023_0000001__.pdf"
       download
-      className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#C89B78] hover:bg-[#A67B5B] transition-colors whitespace-nowrap"
+      className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#C89B5B] hover:bg-[#A67B5B] transition-colors whitespace-nowrap"
     >
       Baixar Lei Municipal
     </a>
@@ -80,7 +149,7 @@ export function Header() {
 
         <div className="lg:hidden">
           <button
-            onClick={() => setIsOpen(true)}
+            onClick={() => setIsMenuOpen(true)}
             className="text-gray-600 focus:outline-none"
           >
             <svg
@@ -103,14 +172,14 @@ export function Header() {
 
       <div
         className={`fixed top-0 left-0 h-full w-78 bg-white shadow-lg transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-50 lg:hidden`}
       >
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
             <h2 className="font-bold text-lg">Menu</h2>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={() => setIsMenuOpen(false)}
               className="text-gray-600 focus:outline-none"
             >
               <svg
@@ -137,9 +206,9 @@ export function Header() {
           </nav>
         </div>
       </div>
-      {isOpen && (
+      {isMenuOpen && (
         <div
-          onClick={() => setIsOpen(false)}
+          onClick={() => setIsMenuOpen(false)}
           className="fixed inset-0 bg-black opacity-50 z-40 lg:hidden"
         ></div>
       )}
