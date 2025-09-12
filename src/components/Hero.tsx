@@ -9,7 +9,7 @@ export function Hero() {
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
       <div className="relative z-20 flex flex-col items-center">
         <h1 className="text-4xl md:text-6xl font-bold font-heading uppercase">
-          GeoTurismo Três Climas
+          Geoturismo Três Climas
         </h1>
         <p className="mt-4 text-lg md:text-2xl font-sans max-w-3xl">
           Explore a extraordinária geodiversidade de Itapipoca, onde o Sertão, a

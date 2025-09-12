@@ -13,7 +13,7 @@ export function AboutPage() {
       <div className="container mx-auto px-4 py-24 pt-32">
         <header className="text-center mb-16">
           <h1 className="text-5xl font-bold font-heading text-gray-800">
-            Sobre o Projeto GeoTurismo Três Climas
+            Sobre o Projeto Geoturismo Três Climas
           </h1>
           <p className="mt-4 text-xl text-gray-600 font-sans max-w-3xl mx-auto">
             Conheça nossa missão, nossos objetivos e a equipe que trabalha para
@@ -28,7 +28,7 @@ export function AboutPage() {
                 Nossa Missão
               </h2>
               <p className="text-lg text-gray-700 font-sans">
-                Promover o geoturismo em Itapipoca como uma ferramenta de{" "}
+                Promover o Geoturismo em Itapipoca como uma ferramenta de{" "}
                 <strong className="text-serra">
                   desenvolvimento sustentável
                 </strong>
@@ -78,7 +78,9 @@ export function AboutPage() {
                 <h3 className="text-2xl font-bold font-heading text-litoral">
                   {projectLead.name}
                 </h3>
-                <p className="font-sans text-gray-600 mt-2">{projectLead.role}</p>
+                <p className="font-sans text-gray-600 mt-2">
+                  {projectLead.role}
+                </p>
               </div>
             </div>
           </section>
