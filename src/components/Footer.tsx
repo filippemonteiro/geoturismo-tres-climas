@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoUFC from "../assets/logo-ufc.png";
 
 export function Footer() {
   return (
@@ -7,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           <div>
             <h3 className="font-bold text-lg mb-3 font-heading text-stone-800">
-              GeoTurismo Três Climas
+              Geoturismo Três Climas
             </h3>
             <p className="text-sm">
               Plataforma de divulgação científica e geoturística da Rota dos
@@ -75,8 +76,15 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-10 pt-8 border-t border-stone-300 text-center">
+          <div className="flex justify-center items-center mb-4">
+            <img
+              src={logoUFC}
+              alt="Logo da Universidade Federal do Ceará"
+              className="h-16"
+            />
+          </div>
           <p className="text-stone-500 text-sm">
-            &copy; {new Date().getFullYear()} GeoTurismo Três Climas. Todos os
+            &copy; {new Date().getFullYear()} Geoturismo Três Climas. Todos os
             direitos reservados.
           </p>
           <p className="text-stone-500 text-sm mt-2">

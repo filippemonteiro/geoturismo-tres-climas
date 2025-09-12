@@ -9,7 +9,11 @@ export function ReferencesPage() {
     address = {Fortaleza},
   }`;
 
-  const handleDownload = (content: string, fileName: string, mimeType: string) => {
+  const handleDownload = (
+    content: string,
+    fileName: string,
+    mimeType: string
+  ) => {
     const blob = new Blob([content], { type: mimeType });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
@@ -35,7 +39,13 @@ export function ReferencesPage() {
           </div>
           <div className="flex space-x-4">
             <button
-              onClick={() => handleDownload(bibtexCitation, "machado_2024.bib", "application/x-bibtex")}
+              onClick={() =>
+                handleDownload(
+                  bibtexCitation,
+                  "machado_2024.bib",
+                  "application/x-bibtex"
+                )
+              }
               className="bg-stone-600 text-white font-bold py-2 px-4 rounded-full hover:bg-stone-700 transition-colors"
             >
               Exportar BibTeX
@@ -52,8 +62,8 @@ export function ReferencesPage() {
                 Manual Técnico de Geomorfologia. Rio de Janeiro: IBGE.
               </li>
               <li>
-                SILVA, A. B. (2020). Geodiversidade do estado do Ceará. Fortaleza:
-                Editora UFC.
+                SILVA, A. B. (2020). Geodiversidade do estado do Ceará.
+                Fortaleza: Editora UFC.
               </li>
             </ul>
           </div>

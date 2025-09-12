@@ -1,4 +1,4 @@
-import backgroundImage from "../assets/background-home.jpg";
+import backgroundImage from "../assets/background-home.png";
 
 export function HomePage() {
   return (
@@ -10,10 +10,10 @@ export function HomePage() {
         <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
         <div className="relative z-10 p-8">
           <h1 className="text-5xl md:text-7xl font-bold font-heading drop-shadow-lg">
-            GeoTurismo Três Climas
+            Geoturismo Três Climas
           </h1>
           <p className="text-xl md:text-2xl mt-4 font-light drop-shadow-md">
-            Explorando a Geodiversidade de Itapipoca, Ceará
+            Conhecendo a Geodiversidade de Itapipoca, Ceará
           </p>
         </div>
       </div>
@@ -26,18 +26,18 @@ export function HomePage() {
             </h2>
             <div className="prose max-w-none text-left md:text-lg text-gray-700 space-y-4">
               <p>
-                Este website foi criado com a iniciativa primordial de apresentar os
-                roteiros geoturísticos da Rota dos Três Climas de Itapipoca-CE,
-                produto da dissertação de mestrado de Ricardo Matos Machado,
-                desenvolvida no âmbito do Programa de Pós-Graduação em
-                Desenvolvimento e Meio Ambiente (PRODEMA/UFC).
+                Este website foi criado com a iniciativa primordial de
+                apresentar os roteiros geoturísticos da Rota dos Três Climas de
+                Itapipoca-CE, produto da dissertação de mestrado de Ricardo
+                Matos Machado, desenvolvida no âmbito do Programa de
+                Pós-Graduação em Desenvolvimento e Meio Ambiente (PRODEMA/UFC).
               </p>
               <p>
                 Nosso objetivo é proporcionar aos geoturistas, à comunidade
-                científica e à população local um material digital, interativo e de
-                fácil acesso sobre as espetacularidades geomorfológicas e o potencial
-                para o geoturismo na região, que abrange paisagens de litoral, serra e
-                sertão.
+                científica e à população local um material digital, interativo e
+                de fácil acesso sobre as espetacularidades geomorfológicas e o
+                potencial para o Geoturismo na região, que abrange paisagens de
+                litoral, serra e sertão.
               </p>
             </div>
           </div>
