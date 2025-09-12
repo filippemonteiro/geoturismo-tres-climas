@@ -3,6 +3,7 @@ import { MainLayout } from "./layouts/MainLayout";
 import { HomePage } from "./pages/HomePage";
 import { RoutesPage } from "./pages/RoutesPage";
 import { HighlightsPage } from "./pages/HighlightsPage";
+import { ReferencesPage } from "./pages/ReferencesPage";
 import { ContactPage } from "./pages/ContactPage";
 import { ScrollToTop } from "./components/ScrollToTop";
 
@@ -40,6 +41,14 @@ export function App() {
           element={
             <MainLayout>
               <HighlightsPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/referencias"
+          element={
+            <MainLayout>
+              <ReferencesPage />
             </MainLayout>
           }
         />

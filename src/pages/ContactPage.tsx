@@ -4,15 +4,15 @@ export function ContactPage() {
   const [agreed, setAgreed] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className="bg-stone-50 min-h-screen">
       <div className="container mx-auto px-4 py-24 pt-32">
-        <h1 className="text-5xl font-bold font-heading text-center text-gray-800 mb-4">
-          Contato
-        </h1>
-        <p className="text-center text-gray-600 mb-12">
-          Tem alguma dúvida, sugestão ou encontrou algum erro? Fale conosco.
-        </p>
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow border">
+          <h1 className="text-4xl font-bold font-heading text-center text-gray-800 mb-4">
+            Contato
+          </h1>
+          <p className="text-center text-gray-600 mb-12">
+            Tem alguma dúvida, sugestão ou encontrou algum erro? Fale conosco.
+          </p>
           <form className="space-y-6">
             <div>
               <label
@@ -25,7 +25,7 @@ export function ContactPage() {
                 type="text"
                 id="name"
                 name="name"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-stone-500 focus:border-stone-500"
               />
             </div>
             <div>
@@ -39,7 +39,7 @@ export function ContactPage() {
                 type="email"
                 id="email"
                 name="email"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-stone-500 focus:border-stone-500"
               />
             </div>
             <div>
@@ -53,11 +53,9 @@ export function ContactPage() {
                 id="message"
                 name="message"
                 rows={4}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-stone-500 focus:border-stone-500"
               ></textarea>
             </div>
-
-            {/* Seção de Consentimento LGPD */}
             <div className="flex items-start">
               <div className="flex items-center h-5">
                 <input
@@ -66,7 +64,7 @@ export function ContactPage() {
                   type="checkbox"
                   checked={agreed}
                   onChange={(e) => setAgreed(e.target.checked)}
-                  className="focus:ring-blue-500 h-4 w-4 text-blue-600 border-gray-300 rounded"
+                  className="focus:ring-stone-500 h-4 w-4 text-stone-600 border-gray-300 rounded"
                 />
               </div>
               <div className="ml-3 text-sm">
@@ -75,17 +73,15 @@ export function ContactPage() {
                 </label>
                 <p className="text-gray-500">
                   Ao marcar esta caixa, você concorda que os dados fornecidos
-                  serão utilizados exclusivamente para o retorno do contato. Não
-                  compartilharemos suas informações.
+                  serão utilizados exclusivamente para o retorno do contato.
                 </p>
               </div>
             </div>
-
             <div className="text-center">
               <button
                 type="submit"
                 disabled={!agreed}
-                className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                className="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-full text-white bg-stone-600 hover:bg-stone-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-stone-500 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
               >
                 Enviar Mensagem
               </button>

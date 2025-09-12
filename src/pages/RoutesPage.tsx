@@ -13,6 +13,12 @@ export function RoutesPage() {
   );
   const initialTabIndex = activeRouteIndex !== -1 ? activeRouteIndex : 0;
 
+  const buttonThemeClasses = {
+    litoral: "bg-[#1E88E5] hover:bg-[#1565C0]",
+    serra: "bg-[#388E3C] hover:bg-[#2E7D32]",
+    sertao: "bg-[#F57C00] hover:bg-[#E65100]",
+  };
+
   const tabs = routesDetails.map((route) => ({
     label: route.name,
     theme: route.theme as "litoral" | "serra" | "sertao",
@@ -60,18 +66,17 @@ export function RoutesPage() {
                 {point.description}
               </p>
 
-              <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap items-center justify-between">
-                {point.reference && (
-                  <p className="text-sm text-gray-500 italic mb-2 md:mb-0">
-                    Referência: {point.reference}
-                  </p>
-                )}
+              <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap items-center justify-end">
                 {point.coordinates && (
                   <a
                     href={`http://googleusercontent.com/maps/search/?api=1&query=${point.coordinates.lat},${point.coordinates.lng}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-blue-600 text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105"
+                    className={`inline-block text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105 ${
+                      buttonThemeClasses[
+                        route.theme as "litoral" | "serra" | "sertao"
+                      ]
+                    }`}
                   >
                     Ver no Mapa
                   </a>
@@ -85,14 +90,13 @@ export function RoutesPage() {
   }));
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-stone-50">
       <div className="container mx-auto px-4 py-24 pt-32">
         <h1 className="text-5xl font-bold font-heading text-center text-gray-800 mb-16">
           Locais de Estudo
         </h1>
         <Tabs tabs={tabs} initialTabIndex={initialTabIndex} />
       </div>
-
       <ImageModal
         src={selectedImage}
         alt="Imagem expandida"
