@@ -1,9 +1,16 @@
-import solPraiaApliques from "../assets/roteiros/sol-e-praia/praia-dos-apiques.jpg";
+import solPraiaApiques from "../assets/roteiros/sol-e-praia/praia-dos-apiques.jpg";
 import solPraiaBarrinha from "../assets/roteiros/sol-e-praia/barrinha-do-maceio.jpg";
 import solPraiaMorroVerde1 from "../assets/roteiros/sol-e-praia/mirante-do-morro-verde-01.jpg";
 import solPraiaMorroVerde2 from "../assets/roteiros/sol-e-praia/mirante-do-morro-verde-02.jpg";
 import solPraiaMorroVerde3 from "../assets/roteiros/sol-e-praia/mirante-do-morro-verde-03.jpg";
 import solPraiaMorroVerde4 from "../assets/roteiros/sol-e-praia/mirante-do-morro-verde-04.jpg";
+import solPraiaBarraBode from "../assets/roteiros/sol-e-praia/barra-do-bode.jpg";
+import solPraiaMiranteBode1 from "../assets/roteiros/sol-e-praia/mirante-do-bode-01.jpg";
+import solPraiaMiranteBode2 from "../assets/roteiros/sol-e-praia/mirante-do-bode-02.jpg";
+import solPraiaMiranteBode3 from "../assets/roteiros/sol-e-praia/mirante-do-bode-03.jpg";
+import solPraiaMiranteBode4 from "../assets/roteiros/sol-e-praia/mirante-do-bode-04.jpg";
+import solPraiaMiranteBode5 from "../assets/roteiros/sol-e-praia/mirante-do-bode-05.jpg";
+import solPraiaMiranteBode6 from "../assets/roteiros/sol-e-praia/mirante-do-bode-06.jpg";
 import solPraiaBaleia1 from "../assets/roteiros/sol-e-praia/praia-da-baleia-01.jpg";
 import solPraiaBaleia2 from "../assets/roteiros/sol-e-praia/praia-da-baleia-02.jpg";
 import solPraiaPedrinhas1 from "../assets/roteiros/sol-e-praia/praia-das-pedrinhas-01.jpg";
@@ -47,6 +54,7 @@ import preHistoricoArara1 from "../assets/roteiros/pre-historico/pedra-da-arara-
 import preHistoricoArara2 from "../assets/roteiros/pre-historico/pedra-da-arara-02.jpg";
 import preHistoricoArara3 from "../assets/roteiros/pre-historico/pedra-da-arara-03.jpg";
 
+import pedrasBraga from "../assets/roteiros/das-pedras/pedra-do-braga.jpg";
 import pedrasSerrinha from "../assets/roteiros/das-pedras/mirante-da-serrinha.jpg";
 import pedrasSantaRita from "../assets/roteiros/das-pedras/mirante-de-santa-rita.jpg";
 import pedrasSantarem from "../assets/roteiros/das-pedras/mirante-de-santarem.jpg";
@@ -79,18 +87,30 @@ export const routesDetails = [
     theme: "litoral",
     points: [
       {
-        name: "1 - Praia dos Apliques",
+        name: "1 - Praia dos Apiques",
         description:
           "Praia com faixa arenosa extensa, com presença de barras e beach rocks. Evidencia também práticas de pesca artesanal e turismo sazonal. No local, ocorrem desafios ambientais devido à exploração turística, ocupação e erosão.",
         coordinates: { lat: -3.10399, lng: -39.519479 },
-        images: [solPraiaApliques],
+        images: [
+          {
+            url: solPraiaApiques,
+            caption: "Vista para a Praia dos Apiques",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "2 - Barrinha do Maceió",
         description:
           "Barra arenosa com dinâmica influenciada por processos eólicos, fluviais e marinhos, que promovem seus deslocamentos sazonais. Períodos chuvosos e períodos de estiagem promovem dinâmicas diferentes na potência da descarga hídrica, o que permite a movimentação da barra em direções perpendiculares, e, por vezes, paralela à linha de costa no sentido Leste-Oeste. Esse comportamento também tem influência da direção em que os ventos alísios de leste se deslocam.",
         coordinates: { lat: -3.12721, lng: -39.481248 },
-        images: [solPraiaBarrinha],
+        images: [
+          {
+            url: solPraiaBarrinha,
+            caption: "Vista panorâmica da Barrinha do Maceió",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "3 - Mirante do Morro Verde",
@@ -98,39 +118,117 @@ export const routesDetails = [
           "Ponto elevado que oferece uma vista panorâmica da planície litorânea, permitindo a compreensão da geomorfologia da região.",
         coordinates: { lat: -3.1295, lng: -39.484514 },
         images: [
-          solPraiaMorroVerde1,
-          solPraiaMorroVerde2,
-          solPraiaMorroVerde3,
-          solPraiaMorroVerde4,
+          {
+            url: solPraiaMorroVerde1,
+            caption: "Vista para o Mirante do Poço Verde",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMorroVerde2,
+            caption: "Vista panorâmica para o nordeste e leste",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMorroVerde3,
+            caption: "Vista panorâmica para a direção sul",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMorroVerde4,
+            caption: "Vista panorâmica para o oeste e noroeste",
+            source: "Ricardo Matos Machado",
+          },
         ],
       },
       {
-        name: "4 - Barra do Bodé",
+        name: "4 - Barra do Bode",
         description:
           "Elevação com afloramentos típicos de eolianitos, estrutura singular formada por areias cimentadas por carbonatos ao longo das oscilações do nível do mar, apresentando camadas estratigraficas bem definidas. Proporciona vistas amplas da planície costeira e dos sistemas dunares, sendo um ótimo local para a interpretação da geodiversidade local.",
         coordinates: { lat: -3.14055, lng: -39.470199 },
-        images: [],
+        images: [
+          {
+            url: solPraiaBarraBode,
+            caption: "Vista para a Barra do Bode",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
-        name: "5 - Mirante do Bodé",
+        name: "5 - Mirante do Bode",
         description:
-          "Oferece uma vista privilegiada da foz do riacho Bodé e da vastidão do oceano, sendo um excelente ponto para observação da paisagem.",
+          "Elevação com afloramentos típicos de eolianitos, estrutura singular formada por areias cimentadas por carbonatos ao longo das oscilações do nível do mar, apresentando camadas estratigraficas bem definidas. Proporciona vistas amplas da planície costeira e dos sistemas dunares, sendo um ótimo local para a interpretação da geodiversidade local.",
         coordinates: { lat: -3.13992, lng: -39.471098 },
-        images: [],
+        images: [
+          {
+            url: solPraiaMiranteBode1,
+            caption: "Vista para o Mirante do Bode",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMiranteBode2,
+            caption:
+              "Eolianitos, popularmente chamados de cascudo, presentes no Mirante do Bode",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMiranteBode3,
+            caption: "Vista para o nordeste e leste desde o Mirante do Bode",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMiranteBode4,
+            caption: "Vista para o sul desde o Mirante do Bode",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMiranteBode5,
+            caption: "Vista para o oeste e noroeste desde o Mirante do Bode",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMiranteBode6,
+            caption: "Eolianitos presentes no Mirante do Bode",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "6 - Praia da Baleia",
         description:
           "Enseada arenosa de cerca de 4 km, ladeada por extensos campos de dunas móveis e fixas, e por lagoas interdunares. O substrato sedimentar se articula com depósitos holocênicos e da Formação Barreiras, associados à presença de beach rocks. O local é tradicionalmente associado à pesca artesanal e se destaca pela atividade turística, demandando atenção com a pressão urbana e a erosão costeira.",
         coordinates: { lat: -3.1469, lng: -39.447021 },
-        images: [solPraiaBaleia1, solPraiaBaleia2],
+        images: [
+          {
+            url: solPraiaBaleia1,
+            caption: "Vista aérea da Praia da Baleia",
+            source: "Rafael Teles",
+          },
+          {
+            url: solPraiaBaleia2,
+            caption:
+              "Bons ventos para a prática de kitesurf e corais deixando o mar mais tranquilo e em melhor condição para o velejo",
+            source: "Rafael Teles",
+          },
+        ],
       },
       {
         name: "7 - Praia das Pedrinhas",
         description:
           "Localizada na planície litorânea, é caracterizada pela presença de beach rocks (arenitos de praia), que são rochas oriundas das alterações de linha de costa, ou seja, resultantes dos processos de subida e descida do nível do mar. Apresenta intensa dinâmica sedimentar e importante valor ecossistêmico, sendo ambiente turístico consolidado no município. A pressão urbanística e a erosão marinha demandam atenção para que haja sua sempre conservação.",
         coordinates: { lat: -3.15369, lng: -39.429077 },
-        images: [solPraiaPedrinhas1, solPraiaPedrinhas2],
+        images: [
+          {
+            url: solPraiaPedrinhas1,
+            caption:
+              "Praia das Pedrinhas com presença de arenitos de praia chamados de beach rocks",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaPedrinhas2,
+            caption: "Arenitos de praia ou Beach rocks da Praia das Pedrinhas",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "8 - Mirante do Maritacaca",
@@ -138,11 +236,31 @@ export const routesDetails = [
           "Ponto panorâmico costeiro sobre afloramento de eolianitos, relevante para a observação do acamamento das estruturas sedimentares e da dinâmica da zona costeira regional. Apresenta ampla vista para o campo de dunas e faixa litorânea. Demanda atenção, pois seu uso intenso pode acelerar muito seus processos de intemperismo e erosão.",
         coordinates: { lat: -3.15018, lng: -39.439747 },
         images: [
-          solPraiaMaritacaca1,
-          solPraiaMaritacaca2,
-          solPraiaMaritacaca3,
-          solPraiaMaritacaca4,
-          solPraiaMaritacaca5,
+          {
+            url: solPraiaMaritacaca1,
+            caption: "Vista para o Mirante de Maritacaca",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMaritacaca2,
+            caption: "Vista para o sul desde o Mirante de Maritacaca",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMaritacaca3,
+            caption: "Vista para o oeste desde o Mirante de Maritacaca",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMaritacaca4,
+            caption: "Vista para o leste desde o Mirante de Maritacaca",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaMaritacaca5,
+            caption: "Presença de eolianitos no topo do mirante",
+            source: "Ricardo Matos Machado",
+          },
         ],
       },
       {
@@ -150,7 +268,18 @@ export const routesDetails = [
         description:
           "Conjunto de lagoas interdunares em meio ao campo de dunas móveis, o qual é composto por areias quartzosas, que formam, com menor expressão, um ambiente análogo aos famigerados Lençóis Maranhenses. O regime de chuva e estiagem regional proporcionam a alternância entre períodos úmidos, com a ocorrência de lagoas cheias, e secos, com lagoas intermitentes, as quais são alimentadas pelos lençóis freáticos aflorantes do aquífero Dunas. A dinâmica eólica também imprime forte influência, proporcionando o deslocamento das dunas e a formação de depressões erodidas, chamadas de planícies de deflação, onde se encaixam as lagoas. Somando a isso, a paisagem apresenta valor cênico raro, importante para a geodiversidade e para o Geoturismo.",
         coordinates: { lat: -3.15593, lng: -39.453107 },
-        images: [solPraiaLencois1, solPraiaLencois2],
+        images: [
+          {
+            url: solPraiaLencois1,
+            caption: "Vista aérea panorâmica dos Lençóis Baleienses",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: solPraiaLencois2,
+            caption: "Prática de kitesurf nos Lençóis Baleienses",
+            source: "Rafael Teles",
+          },
+        ],
       },
     ],
   },
@@ -166,63 +295,117 @@ export const routesDetails = [
         description:
           "Lagoa costeira situada em planície fluvial-lacustre, ladeada por dunas móveis, paleodunas vegetadas e tabuleiros costeiros. Associada ao Aquífero Dunas, funciona como indicador do lençol freático local e reservatório hídrico natural.",
         coordinates: { lat: -3.16218, lng: -39.458981 },
-        images: [aguasMangabeira],
+        images: [
+          {
+            url: aguasMangabeira,
+            caption: "Vista panorâmica da Lagoa da Mangabeira",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "2 - Lagoa do Mato",
         description:
           "Lagoa formada em planície fluviolacustre costeira, margeada por dunas móveis e tabuleiros com vegetação típica. Representa o afloramento do Aquífero Dunas.",
         coordinates: { lat: -3.15453, lng: -39.47278 },
-        images: [aguasMato],
+        images: [
+          {
+            url: aguasMato,
+            caption: "Vista para a Lagoa do Mato",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "3 - Lagoa do Humaitá",
         description:
           "Localizada sobre os tabuleiros costeiros da Formação Barreiras, com depósitos sedimentares pós-Barreiras quaternários e proximidade do campo de dunas. A dinâmica hídrica resulta do contraste entre a baixa permeabilidade da Formação Barreiras e a alta permeabilidade das areias quartzosas do Aquífero Dunas.",
         coordinates: { lat: -3.14567, lng: -39.511969 },
-        images: [aguasHumaita],
+        images: [
+          {
+            url: aguasHumaita,
+            caption: "Vista desde a margem leste da Lagoa do Humaitá",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "4 - Lagoa das Mercês",
         description:
           "Inserida nos tabuleiros costeiros sobre a geologia do Grupo Barreiras, apresenta solos areno-argilosos e grande influência da sazonalidade climática. Sofre pressões de urbanização, mas mantém usos tradicionais como pesca, agricultura de várzea e balneário.",
         coordinates: { lat: -3.16034, lng: -39.603602 },
-        images: [aguasMerces],
+        images: [
+          {
+            url: aguasMerces,
+            caption: "Vista para a Lagoa das Mercês",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "5 - Açude do Poço Verde",
         description:
           "Localizado na superfície sertaneja, foi constituído como fonte de abastecimento e irrigação, consolidando-se também como ponto turístico e cultural. Planícies alveolares como essa geram ambientes aquáticos e ecológicos distintos da paisagem semiárida circundante.",
         coordinates: { lat: -3.44984, lng: -39.62993 },
-        images: [aguasPocoVerde],
+        images: [
+          {
+            url: aguasPocoVerde,
+            caption: "Vista para o Açude do Poço Verde",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "6 - Açude da Ipu Mazagão",
         description:
           "Situado na vertente úmida do maciço de Uruburetama, o açude é originado pelo barramento do riacho Deserto. Está associado ao abastecimento hídrico humano, mas também é utilizado como espaço de lazer e pesca.",
         coordinates: { lat: -3.5376, lng: -39.50832 },
-        images: [aguasIpu],
+        images: [
+          {
+            url: aguasIpu,
+            caption: "Vista aérea do Açude do Ipu Mazagão",
+            source: "Daniel Dantas",
+          },
+        ],
       },
       {
         name: "7 - Cachoeira de São Daniel",
         description:
           "Localizada na vertente úmida do maciço de Uruburetama, possui cerca de 5 m de altura e é controlada por lineamentos geológicos dispostos nas direções NE–SW e NW–SE. O seu entorno está cercado por uso agrícola e fragmentos de mata nativa. ",
         coordinates: { lat: -3.5774, lng: -39.549017 },
-        images: [aguasSaoDaniel],
+        images: [
+          {
+            url: aguasSaoDaniel,
+            caption: "Vista para a Cachoeira de São Daniel",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "8 - Bica da Canoa",
         description:
           "Nascente de água perene situada na vertente subúmida do maciço de Uruburetama, condicionada por lineamentos estruturais. Relevante para a comunidade local como fonte de abastecimento hídrico e espaço de lazer.",
         coordinates: { lat: -3.57696, lng: -39.618891 },
-        images: [aguasBica],
+        images: [
+          {
+            url: aguasBica,
+            caption: "Vista para a Bica da Canoa",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
-        name: "9 - Açude do Quandu",
+        name: "9 - Açude do Quandú",
         description:
           "Localizado na vertente subúmida do maciço de Uruburetama,  configura-se como um reservatório hídrico artificial sobre planície alveolar controlada por lineamentos estruturais. Destaca-se pelo uso comunitário, tanto pela balneabilidade, como pelo o abastecimento hídrico.",
         coordinates: { lat: -3.57546, lng: -39.631831 },
-        images: [aguasQuandu],
+        images: [
+          {
+            url: aguasQuandu,
+            caption: "Vista aérea do Açude do Quandú",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
     ],
   },
@@ -239,11 +422,32 @@ export const routesDetails = [
           "Lajedo com cerca de 2 km² presente na superfície sertaneja, situado no Assentamento Rural Taboca-Lajinhas. Apresenta grande concentração de tanques fossilíferos do Quaternário, com centenas de depósitos de megafauna e registro paleoambiental detalhado. Importante para pesquisas de evolução climática e paleobiológica do Sertão Nordestino.",
         coordinates: { lat: -3.4241, lng: -39.699741 },
         images: [
-          preHistoricoLajinhas1,
-          preHistoricoLajinhas2,
-          preHistoricoLajinhas3,
-          preHistoricoLajinhas4,
-          preHistoricoLajinhas5,
+          {
+            url: preHistoricoLajinhas1,
+            caption: "Vista panoramica do lajedo que está inserido o sítio",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: preHistoricoLajinhas2,
+            caption:
+              "Vista aérea das diferentes fases de evolução dos Tanques Fossilíferos do sítio",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: preHistoricoLajinhas3,
+            caption: "Vista aérea dos Tanques Fossilíferos do sítio",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: preHistoricoLajinhas4,
+            caption: "Vista aérea dos Tanques Fossilíferos do sítio_",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: preHistoricoLajinhas5,
+            caption: "Tanque Natural fossilífero",
+            source: "Ricardo Matos Machado",
+          },
         ],
       },
       {
@@ -251,21 +455,63 @@ export const routesDetails = [
         description:
           "O local está situado sobre a superfície sertaneja a oeste da sede de Itapipoca. Reúne tanques naturais fossilíferos que afloram em lajedos graníticos devido aos processos de intemperismo e controle geológico estrutural. No sítio, já foram descobertos mais de 3.000 fósseis de megafauna pleistocênica, como mastodontes, preguiças-gigantes, tatus e tigres-dentes-de-sabre. O material encontra-se salvaguardado no Museu de Pré-história de Itapipoca (MUPHI).",
         coordinates: { lat: -3.3561, lng: -39.705706 },
-        images: [preHistoricoJirau1, preHistoricoJirau2],
+        images: [
+          {
+            url: preHistoricoJirau1,
+            caption:
+              "Tanque Natural Fossilífero do Sítio Paleontológico do Jirau inundado",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: preHistoricoJirau2,
+            caption:
+              "Tanque Natural Fossilífero do Sítio Paleontológico do Jirau seco",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "3 - Pedra da Sino",
         description:
           "Localizada às margens da Lagoa do Juá, apresenta arte rupestre e potenciais artefatos líticos submersos. Estrutura granítica de grande relevância para o patrimônio geoarqueológico local, associado à tradição oral, pesquisas arqueológicas e relatos históricos da região.",
         coordinates: { lat: -3.35834, lng: -39.713517 },
-        images: [preHistoricoSino1, preHistoricoSino2, preHistoricoSino3],
+        images: [
+          {
+            url: preHistoricoSino1,
+            caption: "Vista para a Lagoa do Juá adjaente à Pedra do Sino",
+            source: "Ana Paula Araújo",
+          },
+          {
+            url: preHistoricoSino2,
+            caption: "Arte rupestre presente na Pedra do Sino",
+            source: "",
+          },
+          {
+            url: preHistoricoSino3,
+            caption: "A Pedra do Sino configura-se como um bolder isolado",
+            source: "Ana Paula Araújo",
+          },
+        ],
       },
       {
         name: "4 - Sítio Paleontológico João Cativo",
         description:
           "Primeiro sítio paleontológico escavado em Itapipoca, está localizado próximo à comunidade Carrapato. O sítio está situado na superfície sertaneja e é possuidor de tanques naturais fossilíferos. Conta com registros de fósseis de preguiça-gigante, mastodonte, dentre outros. Com destacável importância para a paleontologia do Quaternário nacional, serviu como base para o acervo do Museu de Pré-História de Itapipoca e do Museu Nacional no Rio de Janeiro, antes do trágico incêndio ocorrido em 2018.",
         coordinates: { lat: -3.51467, lng: -39.662772 },
-        images: [preHistoricoJoaoCativo1, preHistoricoJoaoCativo2],
+        images: [
+          {
+            url: preHistoricoJoaoCativo1,
+            caption:
+              "Vista aérea do Sítio Paleontológico João Cativo com presença de Tanques Naturais Fossilíferos",
+            source: "Felipe Waldh",
+          },
+          {
+            url: preHistoricoJoaoCativo2,
+            caption:
+              "Tanque Natural Fossilífero presente no Sítio Paleontológico João Cativo",
+            source: "",
+          },
+        ],
       },
       {
         name: "5 - Pedra Ferrada",
@@ -273,9 +519,23 @@ export const routesDetails = [
           "Localizada na comunidade do Mucambo, distrito de Assunção, possui acesso por meio de trilha. Trata-se de um boulder com ocorrência de tafone na base, apresentando honeycombs e arte rupestre associada. Notável pela expressividade das formas e registros arqueológicos, seu valor cultural é reforçado pela literatura artística e arqueológica regional.",
         coordinates: { lat: -3.54036, lng: -39.681247 },
         images: [
-          preHistoricoFerrada1,
-          preHistoricoFerrada2,
-          preHistoricoFerrada3,
+          {
+            url: preHistoricoFerrada1,
+            caption: "Honeycombs associados a arte rupestre",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: preHistoricoFerrada2,
+            caption:
+              "Tafone na base de bolder com presença de honeycombs associados",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: preHistoricoFerrada3,
+            caption:
+              "A Pedra Ferrada é um boulder com presença de tafone basal",
+            source: "Ricardo Matos Machado",
+          },
         ],
       },
       {
@@ -283,14 +543,43 @@ export const routesDetails = [
         description:
           "Inselberg granítico situado no distrito Deserto, com tanques naturais fossilíferos associados e com cerca de 50m de altura. Exibe depósitos de sedimentos areno-argilosos, registros fósseis e contextos associados à megafauna. Serve como reservatório hídrico pela comunidade local, tendo também seu valor ambiental e científico reconhecidos.",
         coordinates: { lat: -3.52481, lng: -39.438718 },
-        images: [preHistoricoPedraDagua1, preHistoricoPedraDagua2],
+        images: [
+          {
+            url: preHistoricoPedraDagua1,
+            caption:
+              "Tanque Natural Fossilífero presente no Sítio Paleontológico Pedra d'água do Deserto",
+            source: "Felipe Waldh",
+          },
+          {
+            url: preHistoricoPedraDagua2,
+            caption:
+              "Vista aérea do Inselberg onde está situado o Sítio Paleontológico Pedra dágua do Deserto",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "7 - Pedra da Arara",
         description:
           "Sítio arqueológico localizado na comunidade Arara, distrito de Assunção, que configura-se com um bloco de rocha com tafone bem desenvolvido na base. Com a presença de inscrições rupestres associadas, sobretudo da tradição geométrica, também mostra-se relevante pela ocorrência de honeycombs (alvéolos de dissolução).",
         coordinates: { lat: -3.6023, lng: -39.691557 },
-        images: [preHistoricoArara1, preHistoricoArara2, preHistoricoArara3],
+        images: [
+          {
+            url: preHistoricoArara1,
+            caption: "Honeycombs no Tafone basal da Pedra da Arara com",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: preHistoricoArara2,
+            caption: "Arte rupestre presente na Pedra da Arara",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: preHistoricoArara3,
+            caption: "Pedra da Arara vista no período de estiagem",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
     ],
   },
@@ -306,14 +595,26 @@ export const routesDetails = [
         description:
           "Imponente inselberg granítico que se destaca na paisagem do sertão, um geossítio de grande beleza e importância para o estudo da geologia regional.",
         coordinates: { lat: -3.6019, lng: -39.716519 },
-        images: [],
+        images: [
+          {
+            url: pedrasBraga,
+            caption: "Vista para a Pedra do Braga",
+            source: "Jová Neco",
+          },
+        ],
       },
       {
         name: "2 - Mirante de Santarém",
         description:
           "Esse mirante natural está situado na comunidade de Santarém, distrito de Assunção. Com vistas para vales, açude do Quandú e encostas do maciço. O local está situado sobre um afloramento granítico da vertente subúmida do maciço de Uruburetama.",
         coordinates: { lat: -3.59353, lng: -39.642028 },
-        images: [pedrasSantarem],
+        images: [
+          {
+            url: pedrasSantarem,
+            caption: "Vista do Mirante de Santarém para o Açude do Quandú",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "3 - Pico de Assunção",
@@ -321,12 +622,36 @@ export const routesDetails = [
           "Com acesso desde o Sítio Humaitá, no distrito de Assunção, configura-se com um Bornhardt de aproximadamente 822 metros, possuindo característica de mirante na vertente subúmida do maciço de Uruburetama. Possui microformas de relevo gratítico no topo, como canais de conexão e gnammas. Apresenta vegetação relativamente preservada em seu entorno.",
         coordinates: { lat: -3.58001, lng: -39.657957 },
         images: [
-          pedrasAssuncao1,
-          pedrasAssuncao2,
-          pedrasAssuncao3,
-          pedrasAssuncao4,
-          pedrasAssuncao5,
-          pedrasAssuncao6,
+          {
+            url: pedrasAssuncao1,
+            caption: "Vista panorâmica para o leste",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasAssuncao2,
+            caption: "Vista panorâmica para o norte",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasAssuncao3,
+            caption: "Vista panorâmica para o sul",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasAssuncao4,
+            caption: "Vista panorâmica para o oeste",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasAssuncao5,
+            caption: "Vista do topo do Pico de Assunção",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasAssuncao6,
+            caption: "Vista do topo do Pico de Assunção",
+            source: "Ricardo Matos Machado",
+          },
         ],
       },
       {
@@ -334,49 +659,135 @@ export const routesDetails = [
         description:
           "Situado no distrito de Arapari, configura-se como um Bornhardt granítico de aproximadamente 830 metros. Possui acesso através de trilha e escalada que desafiam os aventureiros, recebendo grupos de trilheiros frequentemente. Apresenta morfologias de relevo granítico, como gnammas e presença de caos de blocos na base.",
         coordinates: { lat: -3.58773, lng: -39.60737 },
-        images: [pedrasItapicu1, pedrasItapicu2, pedrasItapicu3],
+        images: [
+          {
+            url: pedrasItapicu1,
+            caption: "Vista para a Pedra do Itapicu no período de estiagem",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasItapicu2,
+            caption: "Vista para a Pedra do Itapicu no período chuvoso",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasItapicu3,
+            caption: "Vista do topo da Pedra do Itapicu para o Açude do Quandú",
+            source: "Jová Neco",
+          },
+        ],
       },
       {
         name: "5 - Pedra do Cágado",
         description:
           "Situado no distrito de Arapari, configura-se como um Bornhardt granítico imponente (aproximadamente 900 metros), com encostas convexas, topo arredondado com microformas de dissolução e fraturamento ortogonal. Possui caos de blocos na base e vegetação relativamente preservada no entorno. É um verdadeiro mirante natural da Serra de Uruburetama.",
         coordinates: { lat: -3.58106, lng: -39.598709 },
-        images: [pedrasCagado1, pedrasCagado2],
+        images: [
+          {
+            url: pedrasCagado1,
+            caption: "Vista para a Pedra do Cágado desde a Pedra do Itapicú",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasCagado2,
+            caption:
+              "Vista desde o topo da Pedra do Cágado para o Açude do Quandú",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "6 - Pedra da Itacoatiara",
         description:
           "Situado no distrito de Arapari, configura-se como um Bornhardt granítico imponente (cerca de 870 metros), com caneluras e topo com morfologias de relevo granítico, como gnammas e nubbins. Inserido na vertente subúmida do maciço de Uruburetama, possui uso comunitário em eventos religiosos, além de receber trilheiros frequentemente.",
         coordinates: { lat: -3.57448, lng: -39.589708 },
-        images: [pedrasItacoatiara1, pedrasItacoatiara2],
+        images: [
+          {
+            url: pedrasItacoatiara1,
+            caption: "Vista panorâmica desde o topo da Pedra de Itacoatiara",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasItacoatiara2,
+            caption: "Vista aérea para a Pedra de Itacoatiara",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "7 - Mirante da Santa Rita",
         description:
           "Situado no distrito de Arapari, o mirante é de fácil acesso, estando próximo à sede do município de Itapipoca. O local já foi utilizado inclusive para voos livres de parapente. Formado por afloramentos graníticos do maciço de Uruburetama, evidencia o contato entre unidades geomorfológicas (Serra de Uruburetama e superfície sertaneja adjacente).",
         coordinates: { lat: -3.52347, lng: -39.604017 },
-        images: [pedrasSantaRita],
+        images: [
+          {
+            url: pedrasSantaRita,
+            caption:
+              "Vista do Mirante de Santa Rita para a sede do município de Itapipoca",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "8 - Mirante dos Picos",
         description:
           "Situado no distrito sede do município de Itapipoca (com aproximadamente 500 metros), tem acesso através de uma trilha íngreme. Está disposto sobre granitóides do maciço de Uruburetama, com vistas para a sede do município de Itapipoca e para a superfície sertaneja que bordeja o maciço. No horizonte é possível ver a Serra da Meruoca.",
         coordinates: { lat: -3.51297, lng: -39.547573 },
-        images: [pedrasPicos1, pedrasPicos2, pedrasPicos3],
+        images: [
+          {
+            url: pedrasPicos1,
+            caption: "Vista aerea do topo do Mirante dos Picos",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasPicos2,
+            caption:
+              "Vista do Mirante dos Picos para a sede do município de Itapipoca",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasPicos3,
+            caption: "Vista para o Mirante do Picos",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "9 - Mirante da Serrinha",
         description:
           "Ponto panorâmico localizado na porção norte do maciço de Uruburetama. Proporciona amplas vistas da sede do município de Itapipoca, assim como para inselbergs e para a superfície sertaneja bordejante. Está situado sobre granitóides do maciço de Uruburetama e em seu horizonte é possível ver a Serra da Meruoca.",
         coordinates: { lat: -3.5051, lng: -39.561759 },
-        images: [pedrasSerrinha],
+        images: [
+          {
+            url: pedrasSerrinha,
+            caption: "Vista panormica desde o Mirante da Serrinha",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
       {
         name: "10 - Pedra Lascada",
         description:
           "Situada no distrito sede, é considerada o marco originário do nome do município de Itapipoca. Esse bolder tem seu acesso relativamente fácil desde a sede e está composta por granitóides do Complexo Tamboril-Santa Quitéria. Apresenta feições de esfoliação esferoidal e honeycombs na sua porção reversa.",
         coordinates: { lat: -3.51068, lng: -39.604629 },
-        images: [pedrasLascada1, pedrasLascada2, pedrasLascada3],
+        images: [
+          {
+            url: pedrasLascada1,
+            caption: "Vista para a Pedra Lascada",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasLascada2,
+            caption: "Vista desde a parte superior da Pedra Lascada",
+            source: "Ricardo Matos Machado",
+          },
+          {
+            url: pedrasLascada3,
+            caption:
+              "Vista para a parte reversa da Pedra Lascada com presença de honeycombs",
+            source: "Ricardo Matos Machado",
+          },
+        ],
       },
     ],
   },

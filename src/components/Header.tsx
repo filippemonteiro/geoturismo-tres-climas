@@ -1,15 +1,22 @@
-import { useState, useRef, useEffect } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const Dropdown = ({
   title,
   children,
+  closeMobileMenu,
 }: {
   title: string;
   children: React.ReactNode;
+  closeMobileMenu: () => void;
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+    closeMobileMenu();
+  };
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -24,6 +31,15 @@ const Dropdown = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const childrenWithProps = React.Children.map(children, (child) => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, {
+        onClick: handleLinkClick,
+      } as React.Attributes);
+    }
+    return child;
+  });
+
   return (
     <div className="relative group" ref={containerRef}>
       <button
@@ -34,7 +50,9 @@ const Dropdown = ({
       >
         {title}
         <svg
-          className="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"
+          className={`w-4 h-4 ml-1 transition-transform ${
+            isOpen || "group-hover:rotate-180"
+          }`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -52,7 +70,7 @@ const Dropdown = ({
                    lg:hidden ${isOpen ? "block" : "hidden"}
                    lg:group-hover:block lg:hidden`}
       >
-        {children}
+        {childrenWithProps}
       </div>
     </div>
   );
@@ -60,113 +78,88 @@ const Dropdown = ({
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   const closeMobileMenu = () => setIsMenuOpen(false);
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query.trim()) {
+      setIsSearchOpen(false);
+      navigate(`/search?q=${encodeURIComponent(query.trim())}`);
+      setQuery("");
+    }
+  };
 
   const dropdownLinkClasses =
     "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#A67B5B]";
 
   const navLinks = (
     <>
-      <Dropdown title="Apresentação">
-        <NavLink
-          to="/presentation/geotourism"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+      <Dropdown title="Apresentação" closeMobileMenu={closeMobileMenu}>
+        <NavLink to="/presentation/geotourism" className={dropdownLinkClasses}>
           Geoturismo
         </NavLink>
         <NavLink
           to="/presentation/geodiversity"
           className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
         >
           O que é Geodiversidade
         </NavLink>
         <NavLink
           to="/presentation/geomorphological-heritage"
           className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
         >
           Patrimônio Geomorfológico
         </NavLink>
         <NavLink
           to="/presentation/three-climates"
           className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
         >
-          Terra dos Três Climas
+          Terra dos três climas
         </NavLink>
       </Dropdown>
 
-      <Dropdown title="Locais de Interesse Geomorfológico">
-        <NavLink
-          to="/routes/sol-e-praia"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+      <Dropdown
+        title="Locais de Interesse Geomorfológico"
+        closeMobileMenu={closeMobileMenu}
+      >
+        <NavLink to="/routes/sol-e-praia" className={dropdownLinkClasses}>
           Roteiro Sol e Praia
         </NavLink>
-        <NavLink
-          to="/routes/das-aguas"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+        <NavLink to="/routes/das-aguas" className={dropdownLinkClasses}>
           Roteiro das Águas
         </NavLink>
-        <NavLink
-          to="/routes/pre-historico"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+        <NavLink to="/routes/pre-historico" className={dropdownLinkClasses}>
           Roteiro Pré-Histórico
         </NavLink>
-        <NavLink
-          to="/routes/das-pedras"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+        <NavLink to="/routes/das-pedras" className={dropdownLinkClasses}>
           Roteiro das Pedras
         </NavLink>
       </Dropdown>
 
-      <Dropdown title="Destaques e Curiosidades">
-        <NavLink
-          to="/highlights/geology"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+      <Dropdown
+        title="Destaques e Curiosidades"
+        closeMobileMenu={closeMobileMenu}
+      >
+        <NavLink to="/highlights/geology" className={dropdownLinkClasses}>
           Geologia e Geomorfologia
         </NavLink>
-        <NavLink
-          to="/highlights/paleontology"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+        <NavLink to="/highlights/paleontology" className={dropdownLinkClasses}>
           Paleontologia
         </NavLink>
-        <NavLink
-          to="/highlights/biodiversity"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+        <NavLink to="/highlights/biodiversity" className={dropdownLinkClasses}>
           Biodiversidade
         </NavLink>
-        <NavLink
-          to="/highlights/hypsometry"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+        <NavLink to="/highlights/hypsometry" className={dropdownLinkClasses}>
           Hipsometria (altitude)
         </NavLink>
       </Dropdown>
 
-      <Dropdown title="Contato">
-        <NavLink
-          to="/contact"
-          className={dropdownLinkClasses}
-          onClick={closeMobileMenu}
-        >
+      <Dropdown title="Contato" closeMobileMenu={closeMobileMenu}>
+        <NavLink to="/contact" className={dropdownLinkClasses}>
           Fale conosco
         </NavLink>
       </Dropdown>
@@ -179,48 +172,118 @@ export function Header() {
       download
       className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#C89B5B] hover:bg-[#A67B5B] transition-colors whitespace-nowrap"
     >
-      Baixar Lei Orgânica
+      Baixar Lei Municipal
     </a>
   );
 
   return (
     <header className="bg-white shadow-md fixed w-full z-50">
-      <nav className="container mx-auto px-4 lg:px-6 py-4 flex justify-between items-center">
-        <div className="text-xl font-bold">
-          <Link to="/">
-            <span className="text-[#F57C00]">Geoturismo</span>{" "}
-            <span className="text-[#1E88E5]">Três</span>{" "}
-            <span className="text-[#388E3C]">Climas</span>
-          </Link>
-        </div>
-
-        <div className="hidden lg:flex items-center space-x-6">
-          {navLinks}
-          <div className="pl-4 ml-4 border-l border-gray-300">
-            {downloadButton}
-          </div>
-        </div>
-
-        <div className="lg:hidden">
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            className="text-gray-600 focus:outline-none"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+      <nav className="container mx-auto px-4 lg:px-6 py-4 flex justify-between items-center h-full">
+        {isSearchOpen ? (
+          <div className="w-full h-full flex items-center relative">
+            <form onSubmit={handleSearchSubmit} className="w-full">
+              <input
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Pesquisar no site..."
+                className="w-full h-full focus:outline-none text-lg pr-10"
+                autoFocus
+              />
+            </form>
+            <button
+              onClick={() => setIsSearchOpen(false)}
+              className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-600 hover:text-stone-800"
+              aria-label="Fechar busca"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m4 6H4"
-              ></path>
-            </svg>
-          </button>
-        </div>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        ) : (
+          <>
+            <div className="text-xl font-bold">
+              <Link to="/">
+                <span className="text-[#F57C00]">Geoturismo</span>{" "}
+                <span className="text-[#1E88E5]">Três</span>{" "}
+                <span className="text-[#388E3C]">Climas</span>
+              </Link>
+            </div>
+            <div className="hidden lg:flex items-center space-x-6">
+              {navLinks}
+              <div className="pl-4 ml-4 border-l border-gray-300 flex items-center space-x-4">
+                {downloadButton}
+                <button
+                  onClick={() => setIsSearchOpen(true)}
+                  aria-label="Abrir busca"
+                >
+                  <svg
+                    className="w-6 h-6 text-gray-600 hover:text-stone-800"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div className="lg:hidden flex items-center space-x-4">
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                aria-label="Abrir busca"
+              >
+                <svg
+                  className="w-6 h-6 text-gray-600"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                onClick={() => setIsMenuOpen(true)}
+                className="text-gray-600 focus:outline-none"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16m4 6H4"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </>
+        )}
       </nav>
 
       <div
