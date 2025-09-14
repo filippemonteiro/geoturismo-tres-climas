@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ImageModal } from "../components/ImageModal";
+import { slugify } from "../utils/slugify";
 
 interface Image {
   readonly url: string;
@@ -95,6 +97,17 @@ const PointImageGallery = ({
 
 export function RoutePageLayout({ route }: RoutePageLayoutProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location.hash, route]);
 
   if (!route) {
     return <div>Roteiro não encontrado.</div>;
@@ -116,7 +129,8 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
           {route.points.map((point: Point) => (
             <div
               key={point.name}
-              className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200"
+              id={slugify(point.name)}
+              className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 scroll-mt-24"
             >
               <div className="p-6 text-center">
                 <h3 className="text-2xl font-bold font-heading text-gray-800 mb-4">
@@ -136,7 +150,7 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
                 <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap items-center justify-center">
                   {point.coordinates && (
                     <a
-                      href={`https://maps.google.com/?q=${point.coordinates.lat},${point.coordinates.lng}`}
+                      href={`http://googleusercontent.com/maps.google.com/9{point.coordinates.lat},${point.coordinates.lng}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-block text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105 ${

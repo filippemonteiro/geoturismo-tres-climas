@@ -1,15 +1,15 @@
 import { PresentationPageLayout } from "../../layouts/PresentationPageLayout";
-import heroImage from "../../assets/roteiros/pre-historico/sitio-paleontologico-do-jirau-02.jpg";
+import heroImage from "../../assets/roteiros/pre-historico/sitio-paleontologico-lajinhas-04.jpg";
+import { contentData } from "../../data/contentData";
 
 export function PaleontologyPage() {
+  const pageData = contentData.find(
+    (p) => p.path === "/highlights/paleontology"
+  );
+  if (!pageData) return <div>Conteúdo não encontrado.</div>;
   return (
-    <PresentationPageLayout
-      title="Paleontologia"
-      imageUrl={heroImage}
-    >
-      <p>
-        Itapipoca é um dos mais importantes depósitos fossilíferos do Ceará. Esta seção detalhará a megafauna pleistocênica encontrada na região, como preguiças-gigantes e mastodontes, explicando a importância dos tanques fossilíferos para a pesquisa paleontológica no Nordeste do Brasil.
-      </p>
+    <PresentationPageLayout title={pageData.title} imageUrl={heroImage}>
+      <p>{pageData.content}</p>
     </PresentationPageLayout>
   );
 }

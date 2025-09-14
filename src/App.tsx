@@ -4,6 +4,12 @@ import { ScrollToTop } from "./components/ScrollToTop";
 
 import { HomePage } from "./pages/HomePage";
 import { ContactPage } from "./pages/ContactPage";
+import { SearchResultsPage } from "./pages/SearchResultsPage";
+
+import { GeotourismPage } from "./pages/presentation/GeotourismPage";
+import { GeodiversityPage } from "./pages/presentation/GeodiversityPage";
+import { GeomorphologicalHeritagePage } from "./pages/presentation/GeomorphologicalHeritagePage";
+import { ThreeClimatesPage } from "./pages/presentation/ThreeClimatesPage";
 
 import { RouteSolPraiaPage } from "./pages/routes/RouteSolPraiaPage";
 import { RouteAguasPage } from "./pages/routes/RouteAguasPage";
@@ -13,12 +19,7 @@ import { RoutePedrasPage } from "./pages/routes/RoutePedrasPage";
 import { GeologyPage } from "./pages/highlights/GeologyPage";
 import { PaleontologyPage } from "./pages/highlights/PaleontologyPage";
 import { BiodiversityPage } from "./pages/highlights/BiodiversityPage";
-
 import { HypsometryPage } from "./pages/highlights/HypsometryPage";
-import { ThreeClimatesPage } from "./pages/presentation/ThreeClimatesPage";
-import { GeotourismPage } from "./pages/presentation/GeotourismPage";
-import { GeodiversityPage } from "./pages/presentation/GeodiversityPage";
-import { GeomorphologicalHeritagePage } from "./pages/presentation/GeomorphologicalHeritagePage";
 
 export function App() {
   return (
@@ -30,6 +31,14 @@ export function App() {
           element={
             <MainLayout>
               <HomePage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/search"
+          element={
+            <MainLayout>
+              <SearchResultsPage />
             </MainLayout>
           }
         />
@@ -68,7 +77,7 @@ export function App() {
         />
 
         <Route
-          path="/routes/sol-e-praia"
+          path="/routes/roteiro-sol-e-praia"
           element={
             <MainLayout>
               <RouteSolPraiaPage />
@@ -76,7 +85,7 @@ export function App() {
           }
         />
         <Route
-          path="/routes/das-aguas"
+          path="/routes/roteiro-das-aguas"
           element={
             <MainLayout>
               <RouteAguasPage />
@@ -84,7 +93,7 @@ export function App() {
           }
         />
         <Route
-          path="/routes/pre-historico"
+          path="/routes/roteiro-pre-historico"
           element={
             <MainLayout>
               <RoutePreHistoricoPage />
@@ -92,7 +101,7 @@ export function App() {
           }
         />
         <Route
-          path="/routes/das-pedras"
+          path="/routes/roteiro-das-pedras"
           element={
             <MainLayout>
               <RoutePedrasPage />
