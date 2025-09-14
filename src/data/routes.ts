@@ -1,5 +1,9 @@
 import solPraiaApliques from "../assets/roteiros/sol-e-praia/praia-dos-apiques.jpg";
 import solPraiaBarrinha from "../assets/roteiros/sol-e-praia/barrinha-do-maceio.jpg";
+import solPraiaMorroVerde1 from "../assets/roteiros/sol-e-praia/mirante-do-morro-verde-01.jpg";
+import solPraiaMorroVerde2 from "../assets/roteiros/sol-e-praia/mirante-do-morro-verde-02.jpg";
+import solPraiaMorroVerde3 from "../assets/roteiros/sol-e-praia/mirante-do-morro-verde-03.jpg";
+import solPraiaMorroVerde4 from "../assets/roteiros/sol-e-praia/mirante-do-morro-verde-04.jpg";
 import solPraiaBaleia1 from "../assets/roteiros/sol-e-praia/praia-da-baleia-01.jpg";
 import solPraiaBaleia2 from "../assets/roteiros/sol-e-praia/praia-da-baleia-02.jpg";
 import solPraiaPedrinhas1 from "../assets/roteiros/sol-e-praia/praia-das-pedrinhas-01.jpg";
@@ -20,7 +24,13 @@ import aguasSaoDaniel from "../assets/roteiros/das-aguas/cachoeira-de-sao-daniel
 import aguasMerces from "../assets/roteiros/das-aguas/lagoa-das-merces.jpg";
 import aguasHumaita from "../assets/roteiros/das-aguas/lagoa-de-humaita.jpg";
 import aguasMato from "../assets/roteiros/das-aguas/lagoa-do-mato.jpg";
+import aguasMangabeira from "../assets/roteiros/das-aguas/lagoa-da-mangabeira.jpg";
 
+import preHistoricoLajinhas1 from "../assets/roteiros/pre-historico/sitio-paleontologico-lajinhas-01.jpg";
+import preHistoricoLajinhas2 from "../assets/roteiros/pre-historico/sitio-paleontologico-lajinhas-02.jpg";
+import preHistoricoLajinhas3 from "../assets/roteiros/pre-historico/sitio-paleontologico-lajinhas-03.jpg";
+import preHistoricoLajinhas4 from "../assets/roteiros/pre-historico/sitio-paleontologico-lajinhas-04.jpg";
+import preHistoricoLajinhas5 from "../assets/roteiros/pre-historico/sitio-paleontologico-lajinhas-05.jpg";
 import preHistoricoJirau1 from "../assets/roteiros/pre-historico/sitio-paleontologico-do-jirau-01.jpg";
 import preHistoricoJirau2 from "../assets/roteiros/pre-historico/sitio-paleontologico-do-jirau-02.jpg";
 import preHistoricoSino1 from "../assets/roteiros/pre-historico/pedra-do-sino-01.jpg";
@@ -60,29 +70,10 @@ import pedrasAssuncao4 from "../assets/roteiros/das-pedras/pico-de-assuncao-04.j
 import pedrasAssuncao5 from "../assets/roteiros/das-pedras/pico-de-assuncao-05.jpg";
 import pedrasAssuncao6 from "../assets/roteiros/das-pedras/pico-de-assuncao-06.jpg";
 
-function createSlug(text: string) {
-  const a =
-    "àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;";
-  const b =
-    "aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------";
-  const p = new RegExp(a.split("").join("|"), "g");
-
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, "-")
-    .replace(p, (c) => b.charAt(a.indexOf(c)))
-    .replace(/&/g, "-e-")
-    .replace(/[^\w-]+/g, "") 
-    .replace(/--+/g, "-")
-    .replace(/^-+/, "")
-    .replace(/-+$/, "");
-}
-
 export const routesDetails = [
   {
     name: "Roteiro Sol e Praia",
-    slug: createSlug("Roteiro Sol e Praia"),
+    slug: "roteiro-sol-e-praia",
     description:
       "O Roteiro Sol e Praia integra a Rota Turística dos Três Climas e destaca ambientes costeiros dinâmicos, como praias arenosas, campos de dunas (fixas, móveis e paleodunas), lagoas interdunares, mirantes costeiros naturais e barras fluviais. Tais pontos sintetizam alta diversidade de geoformas e são fundamentais do ponto de vista científico, ecológico, paisagístico e sociocultural, reunindo potencial expressivo para o desenvolvimento do Geoturismo local.",
     theme: "litoral",
@@ -106,12 +97,17 @@ export const routesDetails = [
         description:
           "Ponto elevado que oferece uma vista panorâmica da planície litorânea, permitindo a compreensão da geomorfologia da região.",
         coordinates: { lat: -3.1295, lng: -39.484514 },
-        images: [],
+        images: [
+          solPraiaMorroVerde1,
+          solPraiaMorroVerde2,
+          solPraiaMorroVerde3,
+          solPraiaMorroVerde4,
+        ],
       },
       {
         name: "4 - Barra do Bodé",
         description:
-          "Elevação com afloramentos típicos de eolianitos, estrutura singular formada por areias cimentadas por carbonatos ao longo das oscilações do nível do mar, apresentando camadas estratigráficas bem definidas. Proporciona vistas amplas da planície costeira e dos sistemas dunares, sendo um ótimo local para a interpretação da geodiversidade local.",
+          "Elevação com afloramentos típicos de eolianitos, estrutura singular formada por areias cimentadas por carbonatos ao longo das oscilações do nível do mar, apresentando camadas estratigraficas bem definidas. Proporciona vistas amplas da planície costeira e dos sistemas dunares, sendo um ótimo local para a interpretação da geodiversidade local.",
         coordinates: { lat: -3.14055, lng: -39.470199 },
         images: [],
       },
@@ -160,7 +156,7 @@ export const routesDetails = [
   },
   {
     name: "Roteiro das Águas",
-    slug: createSlug("Roteiro das Águas"),
+    slug: "roteiro-das-aguas",
     description:
       "O Roteiro das Águas integra a Rota Turística dos Três Climas de Itapipoca, destacando ambientes lacustres, fluviais e aquíferos associados a diferentes compartimentos geomorfológicos, especialmente nas planícies litorâneas, tabuleiros costeiros e vertentes do Maciço de Uruburetama. Os geossítios selecionados apresentam significativos valores ecológicos, científicos, educativos e socioculturais, além de configurarem importantes pontos para o Geoturismo e a conservação ambiental.",
     theme: "serra",
@@ -170,7 +166,7 @@ export const routesDetails = [
         description:
           "Lagoa costeira situada em planície fluvial-lacustre, ladeada por dunas móveis, paleodunas vegetadas e tabuleiros costeiros. Associada ao Aquífero Dunas, funciona como indicador do lençol freático local e reservatório hídrico natural.",
         coordinates: { lat: -3.16218, lng: -39.458981 },
-        images: [],
+        images: [aguasMangabeira],
       },
       {
         name: "2 - Lagoa do Mato",
@@ -232,7 +228,7 @@ export const routesDetails = [
   },
   {
     name: "Roteiro Pré-Histórico",
-    slug: createSlug("Roteiro Pré-Histórico"),
+    slug: "roteiro-pre-historico",
     description:
       "O Roteiro Pré-Histórico destaca sítios paleontológicos e arqueológicos profundamente associados à geomorfologia da superfície sertaneja e do Maciço de Uruburetama. São áreas de alto valor científico por registrarem a presença de megafauna extinta, tanques fossilíferos, arte rupestre e estruturas naturais ligadas à ocupação humana pré-colonial, compondo um patrimônio integrado de natureza geológica, arqueológica e cultural. A seguir, a síntese qualificada dos principais pontos.",
     theme: "sertao",
@@ -242,7 +238,13 @@ export const routesDetails = [
         description:
           "Lajedo com cerca de 2 km² presente na superfície sertaneja, situado no Assentamento Rural Taboca-Lajinhas. Apresenta grande concentração de tanques fossilíferos do Quaternário, com centenas de depósitos de megafauna e registro paleoambiental detalhado. Importante para pesquisas de evolução climática e paleobiológica do Sertão Nordestino.",
         coordinates: { lat: -3.4241, lng: -39.699741 },
-        images: [],
+        images: [
+          preHistoricoLajinhas1,
+          preHistoricoLajinhas2,
+          preHistoricoLajinhas3,
+          preHistoricoLajinhas4,
+          preHistoricoLajinhas5,
+        ],
       },
       {
         name: "2 - Sítio Paleontológico do Jirau",
@@ -294,7 +296,7 @@ export const routesDetails = [
   },
   {
     name: "Roteiro das Pedras",
-    slug: createSlug("Roteiro das Pedras"),
+    slug: "roteiro-das-pedras",
     description:
       "O Roteiro das Pedras faz parte da Rota Turística dos Três Climas de Itapipoca e destaca, sobretudo, mirantes e blocos graníticos do Maciço de Uruburetama, sendo pontos de interesse científico, educativo, paisagístico e cultural consolidados no território. Situada na vertente subúmida do maciço de Uruburetama, configura-se com uma bolder. O local apresenta morfologias graníticas, como tafoni e honeycombs (alvéolos) na base do bolder, além de arte rupestre associada.",
     theme: "sertao",
