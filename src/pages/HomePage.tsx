@@ -37,11 +37,11 @@ export function HomePage() {
                 Com ênfase nas formas de relevo e como produto da Tese de
                 Doutorado de Ricardo Matos Machado, desenvolvida no âmbito do
                 Programa de Pós-Graduação em Geografia da Universidade Federal
-                do Ceará (UFC), o objetivo é proporcionar aos entusiastas do
-                relevo um material digital interativo e de fácil acesso sobre as
-                potencialidades geomorfológicas do território itapipoquense, o
-                qual é contemplado com lindas paisagens litorâneas, serranas e
-                sertanejas.
+                do Ceará (UFC), o objetivo desta página é proporcionar aos
+                entusiastas do relevo um material digital interativo e de fácil
+                acesso sobre as potencialidades geomorfológicas do território
+                itapipoquense, o qual é contemplado com lindas paisagens
+                litorâneas, serranas e sertanejas.
               </p>
             </div>
           </div>
