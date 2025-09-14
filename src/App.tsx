@@ -1,11 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { MainLayout } from "./layouts/MainLayout";
-import { HomePage } from "./pages/HomePage";
-import { RoutesPage } from "./pages/RoutesPage";
-import { HighlightsPage } from "./pages/HighlightsPage";
-import { ContactPage } from "./pages/ContactPage";
 import { ScrollToTop } from "./components/ScrollToTop";
-import { GeotourismPage } from "./pages/GeotourismPage.tsx";
+
+import { HomePage } from "./pages/HomePage";
+import { ContactPage } from "./pages/ContactPage";
+
+import { RouteSolPraiaPage } from "./pages/routes/RouteSolPraiaPage";
+import { RouteAguasPage } from "./pages/routes/RouteAguasPage";
+import { RoutePreHistoricoPage } from "./pages/routes/RoutePreHistoricoPage";
+import { RoutePedrasPage } from "./pages/routes/RoutePedrasPage";
+
+import { GeologyPage } from "./pages/highlights/GeologyPage";
+import { PaleontologyPage } from "./pages/highlights/PaleontologyPage";
+import { BiodiversityPage } from "./pages/highlights/BiodiversityPage";
+import { GeotourismPage } from "./pages/GeotourismPage";
 import { GeodiversityPage } from "./pages/GeodiversityPage";
 import { GeomorphologicalHeritagePage } from "./pages/GeomorphologicalHeritagePage";
 
@@ -23,6 +31,7 @@ export function App() {
           }
         />
 
+        {/* Presentation Routes */}
         <Route
           path="/presentation/geotourism"
           element={
@@ -48,32 +57,68 @@ export function App() {
           }
         />
 
+        {/* Route (Roteiros) Pages */}
         <Route
-          path="/locais-de-estudo"
+          path="/routes/sol-e-praia"
           element={
             <MainLayout>
-              <RoutesPage />
+              <RouteSolPraiaPage />
             </MainLayout>
           }
         />
         <Route
-          path="/locais-de-estudo/:slug"
+          path="/routes/das-aguas"
           element={
             <MainLayout>
-              <RoutesPage />
+              <RouteAguasPage />
             </MainLayout>
           }
         />
         <Route
-          path="/destaques"
+          path="/routes/pre-historico"
           element={
             <MainLayout>
-              <HighlightsPage />
+              <RoutePreHistoricoPage />
             </MainLayout>
           }
         />
         <Route
-          path="/contato"
+          path="/routes/das-pedras"
+          element={
+            <MainLayout>
+              <RoutePedrasPage />
+            </MainLayout>
+          }
+        />
+
+        {/* Highlights Pages */}
+        <Route
+          path="/highlights/geology"
+          element={
+            <MainLayout>
+              <GeologyPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/highlights/paleontology"
+          element={
+            <MainLayout>
+              <PaleontologyPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/highlights/biodiversity"
+          element={
+            <MainLayout>
+              <BiodiversityPage />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/contact"
           element={
             <MainLayout>
               <ContactPage />

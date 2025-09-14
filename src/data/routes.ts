@@ -367,4 +367,4 @@ export const routesDetails = [
       },
     ],
   },
-];
+] as const;
