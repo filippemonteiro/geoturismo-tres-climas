@@ -95,7 +95,7 @@ export function Header() {
           className={dropdownLinkClasses}
           onClick={closeMobileMenu}
         >
-          Terra dos três climas
+          Terra dos Três Climas
         </NavLink>
       </Dropdown>
 
