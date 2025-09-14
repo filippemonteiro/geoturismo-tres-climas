@@ -13,9 +13,12 @@ import { RoutePedrasPage } from "./pages/routes/RoutePedrasPage";
 import { GeologyPage } from "./pages/highlights/GeologyPage";
 import { PaleontologyPage } from "./pages/highlights/PaleontologyPage";
 import { BiodiversityPage } from "./pages/highlights/BiodiversityPage";
-import { GeotourismPage } from "./pages/GeotourismPage";
-import { GeodiversityPage } from "./pages/GeodiversityPage";
-import { GeomorphologicalHeritagePage } from "./pages/GeomorphologicalHeritagePage";
+
+import { HypsometryPage } from "./pages/highlights/HypsometryPage";
+import { ThreeClimatesPage } from "./pages/presentation/ThreeClimatesPage";
+import { GeotourismPage } from "./pages/presentation/GeotourismPage";
+import { GeodiversityPage } from "./pages/presentation/GeodiversityPage";
+import { GeomorphologicalHeritagePage } from "./pages/presentation/GeomorphologicalHeritagePage";
 
 export function App() {
   return (
@@ -52,6 +55,14 @@ export function App() {
           element={
             <MainLayout>
               <GeomorphologicalHeritagePage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/presentation/three-climates"
+          element={
+            <MainLayout>
+              <ThreeClimatesPage />
             </MainLayout>
           }
         />
@@ -110,6 +121,14 @@ export function App() {
           element={
             <MainLayout>
               <BiodiversityPage />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/highlights/hypsometry"
+          element={
+            <MainLayout>
+              <HypsometryPage />
             </MainLayout>
           }
         />

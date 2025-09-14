@@ -90,6 +90,13 @@ export function Header() {
         >
           Patrimônio Geomorfológico
         </NavLink>
+        <NavLink
+          to="/presentation/three-climates"
+          className={dropdownLinkClasses}
+          onClick={closeMobileMenu}
+        >
+          Terra dos três climas
+        </NavLink>
       </Dropdown>
 
       <Dropdown title="Locais de Interesse Geomorfológico">
@@ -144,6 +151,13 @@ export function Header() {
           onClick={closeMobileMenu}
         >
           Biodiversidade
+        </NavLink>
+        <NavLink
+          to="/highlights/hypsometry"
+          className={dropdownLinkClasses}
+          onClick={closeMobileMenu}
+        >
+          Hipsometria (altitude)
         </NavLink>
       </Dropdown>
 
