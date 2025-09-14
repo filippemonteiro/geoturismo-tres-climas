@@ -10,11 +10,17 @@ export function HomePage() {
         <div className="absolute inset-0 bg-black opacity-60 z-0"></div>
         <div className="relative z-10 p-8">
           <h1 className="text-5xl md:text-7xl font-bold font-heading drop-shadow-lg">
-            <span className="text-[#F57C00]">Geoturismo</span>{" "}
-            <span className="text-[#1E88E5]">Três</span>{" "}
-            <span className="text-[#388E3C]">Climas</span>
+            <span className="inline-block animate-fade-in-up text-[#F57C00]">
+              Geoturismo
+            </span>{" "}
+            <span className="inline-block animate-fade-in-up animation-delay-150 text-[#1E88E5]">
+              Três
+            </span>{" "}
+            <span className="inline-block animate-fade-in-up animation-delay-300 text-[#388E3C]">
+              Climas
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl mt-4 font-light drop-shadow-md">
+          <p className="text-xl md:text-2xl mt-4 font-light drop-shadow-md animate-fade-in-up animation-delay-450">
             Conhecendo a Geodiversidade de Itapipoca, Ceará
           </p>
         </div>
@@ -28,10 +34,20 @@ export function HomePage() {
             </h2>
             <div className="prose max-w-none text-left md:text-lg text-gray-700 space-y-4">
               <p>
-                Este website foi criado com base nos roteiros turísticos estabelecidos a partir da Rota Turística dos Três Climas de Itapipoca (Ceará), a qual foi oficializada através da lei orgânica 062/2023. 
+                Este website foi criado com base nos roteiros turísticos
+                estabelecidos a partir da Rota Turística dos Três Climas de
+                Itapipoca (Ceará), a qual foi oficializada através da lei
+                orgânica 062/2023.
               </p>
               <p>
-                Com ênfase nas formas de relevo e como produto da Tese de Doutorado de Ricardo Matos Machado, desenvolvida no âmbito do Programa de Pós-Graduação em Geografia da Universidade Federal do Ceará (UFC), o objetivo desta página é proporcionar aos entusiastas do relevo um material digital interativo e de fácil acesso sobre as potencialidades geomorfológicas do território itapipoquense, o qual é contemplado com lindas paisagens litorâneas, serranas e sertanejas.
+                Com ênfase nas formas de relevo e como produto da Tese de
+                Doutorado de Ricardo Matos Machado, desenvolvida no âmbito do
+                Programa de Pós-Graduação em Geografia da Universidade Federal
+                do Ceará (UFC), o objetivo desta página é proporcionar aos
+                entusiastas do relevo um material digital interativo e de fácil
+                acesso sobre as potencialidades geomorfológicas do território
+                itapipoquense, o qual é contemplado com lindas paisagens
+                litorâneas, serranas e sertanejas.
               </p>
             </div>
           </div>
