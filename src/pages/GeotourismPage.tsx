@@ -1,5 +1,5 @@
 import { PresentationPageLayout } from "../layouts/PresentationPageLayout";
-import heroImage from "../assets/img-GeotourismPage.jpg";
+import heroImage from "../assets/roteiros/pre-historico/pedra-da-arara-01.jpg";
 
 export function GeotourismPage() {
   return (

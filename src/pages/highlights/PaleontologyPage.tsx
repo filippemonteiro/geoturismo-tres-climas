@@ -1,5 +1,5 @@
 import { PresentationPageLayout } from "../../layouts/PresentationPageLayout";
-import heroImage from "../../assets/roteiros/pre-historico/sitio-paleontologico-do-jirau-01.jpg";
+import heroImage from "../../assets/roteiros/pre-historico/sitio-paleontologico-do-jirau-02.jpg";
 
 export function PaleontologyPage() {
   return (

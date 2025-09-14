@@ -73,8 +73,8 @@ function createSlug(text: string) {
     .replace(/\s+/g, "-")
     .replace(p, (c) => b.charAt(a.indexOf(c)))
     .replace(/&/g, "-e-")
-    .replace(/[^\w\-]+/g, "")
-    .replace(/\-\-+/g, "-")
+    .replace(/[^\w-]+/g, "") 
+    .replace(/--+/g, "-")
     .replace(/^-+/, "")
     .replace(/-+$/, "");
 }
