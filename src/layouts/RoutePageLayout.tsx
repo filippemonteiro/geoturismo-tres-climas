@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { ImageModal } from "../components/ImageModal";
 
+interface Image {
+  readonly url: string;
+  readonly caption: string;
+  readonly source: string;
+}
+
 interface Point {
   readonly name: string;
   readonly description: string;
   readonly coordinates: { readonly lat: number; readonly lng: number };
-  readonly images: readonly string[];
+  readonly images: readonly Image[];
 }
 
 interface RoutePageLayoutProps {
@@ -28,7 +34,7 @@ const PointImageGallery = ({
   pointName,
   onImageClick,
 }: {
-  images: readonly string[];
+  images: readonly Image[];
   pointName: string;
   onImageClick: (src: string) => void;
 }) => {
@@ -38,52 +44,51 @@ const PointImageGallery = ({
   const singleImageClasses =
     "rounded-lg w-full shadow cursor-pointer transition-transform hover:scale-105";
 
-  if (imageCount === 0) {
-    return null;
-  }
+  const renderImageWithCaption = (
+    image: Image,
+    index: number,
+    className: string
+  ) => (
+    <figure key={index} className="flex flex-col h-full">
+      <img
+        src={image.url}
+        alt={image.caption || `Imagem ${index + 1} de ${pointName}`}
+        className={className}
+        onClick={() => onImageClick(image.url)}
+      />
+      {(image.caption || image.source) && (
+        <figcaption className="text-xs text-gray-600 mt-2 text-left bg-gray-50 p-2 rounded-b-lg flex-grow">
+          {image.caption}
+          {image.source && (
+            <span className="block font-medium">Fonte: {image.source}</span>
+          )}
+        </figcaption>
+      )}
+    </figure>
+  );
+
+  if (imageCount === 0) return null;
 
   if (imageCount === 1) {
     return (
       <div className="mb-4 flex justify-center">
         <div className="w-full lg:w-2/3">
-          <img
-            src={images[0]}
-            alt={`Imagem de ${pointName}`}
-            className={singleImageClasses}
-            onClick={() => onImageClick(images[0])}
-          />
+          {renderImageWithCaption(images[0], 0, singleImageClasses)}
         </div>
       </div>
     );
   }
 
-  if (imageCount === 2) {
-    return (
-      <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {images.map((imgSrc, index) => (
-          <img
-            key={index}
-            src={imgSrc}
-            alt={`Imagem ${index + 1} de ${pointName}`}
-            className={gridImageClasses}
-            onClick={() => onImageClick(imgSrc)}
-          />
-        ))}
-      </div>
-    );
-  }
+  const layoutClass =
+    imageCount === 2
+      ? "grid-cols-1 sm:grid-cols-2"
+      : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {images.map((imgSrc, index) => (
-        <img
-          key={index}
-          src={imgSrc}
-          alt={`Imagem ${index + 1} de ${pointName}`}
-          className={gridImageClasses}
-          onClick={() => onImageClick(imgSrc)}
-        />
-      ))}
+    <div className={`mb-4 grid ${layoutClass} gap-4`}>
+      {images.map((img, index) =>
+        renderImageWithCaption(img, index, gridImageClasses)
+      )}
     </div>
   );
 };
@@ -131,7 +136,7 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
                 <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap items-center justify-center">
                   {point.coordinates && (
                     <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${point.coordinates.lat},${point.coordinates.lng}`}
+                      href={`https://maps.google.com/?q=${point.coordinates.lat},${point.coordinates.lng}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-block text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105 ${
