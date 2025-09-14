@@ -1,5 +1,5 @@
 import { PresentationPageLayout } from "../layouts/PresentationPageLayout";
-import heroImage from "../assets/img-GeodiversityPage.jpg";
+import heroImage from "../assets/roteiros/das-aguas/lagoa-do-mato.jpg";
 
 export function GeodiversityPage() {
   return (

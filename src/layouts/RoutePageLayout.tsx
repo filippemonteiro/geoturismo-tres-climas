@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ImageModal } from "../components/ImageModal";
 
-// Apenas as interfaces abaixo foram alteradas para incluir "readonly"
 interface Point {
   readonly name: string;
   readonly description: string;
@@ -24,6 +23,71 @@ const themeClasses = {
   sertao: "bg-[#F57C00] hover:bg-[#E65100]",
 };
 
+const PointImageGallery = ({
+  images,
+  pointName,
+  onImageClick,
+}: {
+  images: readonly string[];
+  pointName: string;
+  onImageClick: (src: string) => void;
+}) => {
+  const imageCount = images.length;
+  const gridImageClasses =
+    "rounded-lg object-cover w-full h-64 shadow cursor-pointer transition-transform hover:scale-105";
+  const singleImageClasses =
+    "rounded-lg w-full shadow cursor-pointer transition-transform hover:scale-105";
+
+  if (imageCount === 0) {
+    return null;
+  }
+
+  if (imageCount === 1) {
+    return (
+      <div className="mb-4 flex justify-center">
+        <div className="w-full lg:w-2/3">
+          <img
+            src={images[0]}
+            alt={`Imagem de ${pointName}`}
+            className={singleImageClasses}
+            onClick={() => onImageClick(images[0])}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (imageCount === 2) {
+    return (
+      <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {images.map((imgSrc, index) => (
+          <img
+            key={index}
+            src={imgSrc}
+            alt={`Imagem ${index + 1} de ${pointName}`}
+            className={gridImageClasses}
+            onClick={() => onImageClick(imgSrc)}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {images.map((imgSrc, index) => (
+        <img
+          key={index}
+          src={imgSrc}
+          alt={`Imagem ${index + 1} de ${pointName}`}
+          className={gridImageClasses}
+          onClick={() => onImageClick(imgSrc)}
+        />
+      ))}
+    </div>
+  );
+};
+
 export function RoutePageLayout({ route }: RoutePageLayoutProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -44,38 +108,30 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
         </div>
 
         <div className="space-y-12">
-          {route.points.map((point) => (
+          {route.points.map((point: Point) => (
             <div
               key={point.name}
               className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200"
             >
-              <div className="p-6">
+              <div className="p-6 text-center">
                 <h3 className="text-2xl font-bold font-heading text-gray-800 mb-4">
                   {point.name}
                 </h3>
 
-                {point.images && point.images.length > 0 && (
-                  <div className="mb-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {point.images.map((imgSrc, index) => (
-                      <img
-                        key={index}
-                        src={imgSrc}
-                        alt={`Imagem ${index + 1} de ${point.name}`}
-                        className="rounded-lg object-cover w-full h-64 shadow cursor-pointer transition-transform hover:scale-105"
-                        onClick={() => setSelectedImage(imgSrc)}
-                      />
-                    ))}
-                  </div>
-                )}
+                <PointImageGallery
+                  images={point.images}
+                  pointName={point.name}
+                  onImageClick={setSelectedImage}
+                />
 
-                <p className="font-sans text-gray-700 mt-2 leading-relaxed">
+                <p className="font-sans text-gray-700 mt-6 leading-relaxed">
                   {point.description}
                 </p>
 
-                <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap items-center justify-end">
+                <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap items-center justify-center">
                   {point.coordinates && (
                     <a
-                      href={`http://googleusercontent.com/maps/search/?api=1&query=${point.coordinates.lat},${point.coordinates.lng}`}
+                      href={`https://www.google.com/maps/search/?api=1&query=${point.coordinates.lat},${point.coordinates.lng}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-block text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105 ${

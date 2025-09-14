@@ -209,7 +209,6 @@ export function Header() {
         </div>
       </nav>
 
-      {/* Mobile Menu Panel */}
       <div
         className={`fixed top-0 left-0 h-full w-78 bg-white shadow-lg transform ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"

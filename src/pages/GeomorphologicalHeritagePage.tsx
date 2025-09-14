@@ -1,5 +1,5 @@
 import { PresentationPageLayout } from "../layouts/PresentationPageLayout";
-import heroImage from "../assets/img-GeomorphologicalHeritagePage.jpg";
+import heroImage from "../assets/roteiros/das-pedras/mirante-de-santarem.jpg";
 
 export function GeomorphologicalHeritagePage() {
   return (

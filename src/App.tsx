@@ -31,7 +31,6 @@ export function App() {
           }
         />
 
-        {/* Presentation Routes */}
         <Route
           path="/presentation/geotourism"
           element={
@@ -57,7 +56,6 @@ export function App() {
           }
         />
 
-        {/* Route (Roteiros) Pages */}
         <Route
           path="/routes/sol-e-praia"
           element={
@@ -91,7 +89,6 @@ export function App() {
           }
         />
 
-        {/* Highlights Pages */}
         <Route
           path="/highlights/geology"
           element={
