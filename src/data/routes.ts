@@ -61,11 +61,22 @@ import pedrasAssuncao5 from "../assets/roteiros/das-pedras/pico-de-assuncao-05.j
 import pedrasAssuncao6 from "../assets/roteiros/das-pedras/pico-de-assuncao-06.jpg";
 
 function createSlug(text: string) {
+  const a =
+    "àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;";
+  const b =
+    "aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------";
+  const p = new RegExp(a.split("").join("|"), "g");
+
   return text
+    .toString()
     .toLowerCase()
-    .replace(/ & /g, "-")
-    .replace(/ /g, "-")
-    .replace(/[^\w-]+/g, "");
+    .replace(/\s+/g, "-")
+    .replace(p, (c) => b.charAt(a.indexOf(c)))
+    .replace(/&/g, "-e-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
 }
 
 export const routesDetails = [
