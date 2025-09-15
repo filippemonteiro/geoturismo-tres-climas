@@ -67,8 +67,8 @@ const Dropdown = ({
       </button>
       <div
         className={`absolute top-full left-0 w-64 bg-white rounded-md shadow-lg z-50 py-1 
-                lg:hidden ${isOpen ? "block" : "hidden"}
-                lg:group-hover:block lg:hidden`}
+                   lg:hidden ${isOpen ? "block" : "hidden"}
+                   lg:group-hover:block lg:hidden`}
       >
         {childrenWithProps}
       </div>
@@ -126,16 +126,25 @@ export function Header() {
         title="Locais de Interesse Geomorfológico"
         closeMobileMenu={closeMobileMenu}
       >
-        <NavLink to="/routes/sol-e-praia" className={dropdownLinkClasses}>
+        <NavLink
+          to="/routes/roteiro-sol-e-praia"
+          className={dropdownLinkClasses}
+        >
           Roteiro Sol e Praia
         </NavLink>
-        <NavLink to="/routes/das-aguas" className={dropdownLinkClasses}>
+        <NavLink to="/routes/roteiro-das-aguas" className={dropdownLinkClasses}>
           Roteiro das Águas
         </NavLink>
-        <NavLink to="/routes/pre-historico" className={dropdownLinkClasses}>
+        <NavLink
+          to="/routes/roteiro-pre-historico"
+          className={dropdownLinkClasses}
+        >
           Roteiro Pré-Histórico
         </NavLink>
-        <NavLink to="/routes/das-pedras" className={dropdownLinkClasses}>
+        <NavLink
+          to="/routes/roteiro-das-pedras"
+          className={dropdownLinkClasses}
+        >
           Roteiro das Pedras
         </NavLink>
       </Dropdown>
