@@ -27,7 +27,7 @@ export function HomePage() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl mt-4 font-light drop-shadow-md animate-fade-in-up animation-delay-450">
-            Conhecendo a Geodiversidade de Itapipoca (Ceará, Brasil).
+            Conhecendo a Geodiversidade de Itapipoca (Ceará, Brasil)
           </p>
         </div>
       </div>
