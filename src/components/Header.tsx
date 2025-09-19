@@ -67,8 +67,8 @@ const Dropdown = ({
       </button>
       <div
         className={`absolute top-full left-0 w-64 bg-white rounded-md shadow-lg z-50 py-1 
-                   lg:hidden ${isOpen ? "block" : "hidden"}
-                   lg:group-hover:block lg:hidden`}
+                  lg:hidden ${isOpen ? "block" : "hidden"}
+                  lg:group-hover:block lg:hidden`}
       >
         {childrenWithProps}
       </div>
@@ -177,7 +177,7 @@ export function Header() {
 
   const downloadButton = (
     <a
-      href="/LEI MUNICIPAL_062_2023_0000001__.pdf"
+      href="/lei-municipal-062-2023.pdf"
       download
       className="flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#C89B5B] hover:bg-[#A67B5B] transition-colors whitespace-nowrap"
     >

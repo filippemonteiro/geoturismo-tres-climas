@@ -150,7 +150,7 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
                 <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap items-center justify-center">
                   {point.coordinates && (
                     <a
-                      href={`http://googleusercontent.com/maps.google.com/9{point.coordinates.lat},${point.coordinates.lng}`}
+                      href={`https://www.google.com/maps?q=${point.coordinates.lat},${point.coordinates.lng}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-block text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105 ${
