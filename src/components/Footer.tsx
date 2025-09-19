@@ -63,10 +63,9 @@ export function Footer() {
             <p className="text-sm font-semibold text-stone-700">
               Ricardo Matos Machado
             </p>
-            {/* <p className="text-sm mt-1">
-              Dissertação de Mestrado apresentada ao Programa de Pós-Graduação
-              em Desenvolvimento e Meio Ambiente (PRODEMA/UFC).
-            </p> */}
+            <p className="text-sm mt-1">
+              Geógrafo e Professor de Geografia Mestre em desenvolvimento.
+            </p>
           </div>
         </div>
         <div className="mt-10 pt-8 border-t border-stone-300 text-center">
