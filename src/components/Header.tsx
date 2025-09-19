@@ -66,9 +66,9 @@ const Dropdown = ({
         </svg>
       </button>
       <div
-        className={`absolute top-full left-0 w-64 bg-white rounded-md shadow-lg z-50 py-1 
-                  lg:hidden ${isOpen ? "block" : "hidden"}
-                  lg:group-hover:block lg:hidden`}
+        className={`absolute top-full right-0 lg:left-0 w-64 bg-white rounded-md shadow-lg z-50 py-1 
+                   md:hidden ${isOpen ? "block" : "hidden"}
+                   md:group-hover:block md:hidden`}
       >
         {childrenWithProps}
       </div>
@@ -96,7 +96,7 @@ export function Header() {
   const dropdownLinkClasses =
     "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#A67B5B]";
 
-  const navLinks = (
+  const allNavLinks = (
     <>
       <Dropdown title="Apresentação" closeMobileMenu={closeMobileMenu}>
         <NavLink to="/presentation/geotourism" className={dropdownLinkClasses}>
@@ -121,7 +121,6 @@ export function Header() {
           Terra dos três climas
         </NavLink>
       </Dropdown>
-
       <Dropdown
         title="Locais de Interesse Geomorfológico"
         closeMobileMenu={closeMobileMenu}
@@ -148,7 +147,6 @@ export function Header() {
           Roteiro das Pedras
         </NavLink>
       </Dropdown>
-
       <Dropdown
         title="Destaques e Curiosidades"
         closeMobileMenu={closeMobileMenu}
@@ -166,7 +164,6 @@ export function Header() {
           Hipsometria (altitude)
         </NavLink>
       </Dropdown>
-
       <Dropdown title="Contato" closeMobileMenu={closeMobileMenu}>
         <NavLink to="/contact" className={dropdownLinkClasses}>
           Fale conosco
@@ -187,7 +184,7 @@ export function Header() {
 
   return (
     <header className="bg-white shadow-md fixed w-full z-50">
-      <nav className="container mx-auto px-4 lg:px-6 py-4 flex justify-between items-center h-full">
+      <nav className="w-full mx-auto px-4 lg:px-6 py-4 flex items-center h-full">
         {isSearchOpen ? (
           <div className="w-full h-full flex items-center relative">
             <form onSubmit={handleSearchSubmit} className="w-full">
@@ -222,16 +219,109 @@ export function Header() {
           </div>
         ) : (
           <>
-            <div className="text-xl font-bold">
+            <div className="flex-shrink-0 text-xl font-bold">
               <Link to="/">
                 <span className="text-[#F57C00]">Geoturismo</span>{" "}
                 <span className="text-[#1E88E5]">Três</span>{" "}
                 <span className="text-[#388E3C]">Climas</span>
               </Link>
             </div>
-            <div className="hidden lg:flex items-center space-x-6">
-              {navLinks}
-              <div className="pl-4 ml-4 border-l border-gray-300 flex items-center space-x-4">
+
+            <div className="hidden md:flex items-center ml-auto">
+              <div className="hidden lg:flex items-center space-x-6">
+                {allNavLinks}
+              </div>
+              <div className="hidden md:flex lg:hidden items-center space-x-6">
+                <Dropdown
+                  title="Apresentação"
+                  closeMobileMenu={closeMobileMenu}
+                >
+                  <NavLink
+                    to="/presentation/geotourism"
+                    className={dropdownLinkClasses}
+                  >
+                    Geoturismo
+                  </NavLink>
+                  <NavLink
+                    to="/presentation/geodiversity"
+                    className={dropdownLinkClasses}
+                  >
+                    O que é Geodiversidade
+                  </NavLink>
+                  <NavLink
+                    to="/presentation/geomorphological-heritage"
+                    className={dropdownLinkClasses}
+                  >
+                    Patrimônio Geomorfológico
+                  </NavLink>
+                  <NavLink
+                    to="/presentation/three-climates"
+                    className={dropdownLinkClasses}
+                  >
+                    Terra dos três climas
+                  </NavLink>
+                </Dropdown>
+                <Dropdown
+                  title="Locais de Interesse Geomorfológico"
+                  closeMobileMenu={closeMobileMenu}
+                >
+                  <NavLink
+                    to="/routes/roteiro-sol-e-praia"
+                    className={dropdownLinkClasses}
+                  >
+                    Roteiro Sol e Praia
+                  </NavLink>
+                  <NavLink
+                    to="/routes/roteiro-das-aguas"
+                    className={dropdownLinkClasses}
+                  >
+                    Roteiro das Águas
+                  </NavLink>
+                  <NavLink
+                    to="/routes/roteiro-pre-historico"
+                    className={dropdownLinkClasses}
+                  >
+                    Roteiro Pré-Histórico
+                  </NavLink>
+                  <NavLink
+                    to="/routes/roteiro-das-pedras"
+                    className={dropdownLinkClasses}
+                  >
+                    Roteiro das Pedras
+                  </NavLink>
+                </Dropdown>
+                <Dropdown title="Mais" closeMobileMenu={closeMobileMenu}>
+                  <NavLink
+                    to="/highlights/geology"
+                    className={dropdownLinkClasses}
+                  >
+                    Geologia e Geomorfologia
+                  </NavLink>
+                  <NavLink
+                    to="/highlights/paleontology"
+                    className={dropdownLinkClasses}
+                  >
+                    Paleontologia
+                  </NavLink>
+                  <NavLink
+                    to="/highlights/biodiversity"
+                    className={dropdownLinkClasses}
+                  >
+                    Biodiversidade
+                  </NavLink>
+                  <NavLink
+                    to="/highlights/hypsometry"
+                    className={dropdownLinkClasses}
+                  >
+                    Hipsometria (altitude)
+                  </NavLink>
+                  <NavLink to="/contact" className={dropdownLinkClasses}>
+                    Fale conosco
+                  </NavLink>
+                </Dropdown>
+              </div>
+
+              <div className="pl-6 ml-6 border-l border-gray-300 flex items-center space-x-4">
                 {downloadButton}
                 <button
                   onClick={() => setIsSearchOpen(true)}
@@ -253,7 +343,8 @@ export function Header() {
                 </button>
               </div>
             </div>
-            <div className="lg:hidden flex items-center space-x-4">
+
+            <div className="md:hidden flex items-center ml-auto space-x-4">
               <button
                 onClick={() => setIsSearchOpen(true)}
                 aria-label="Abrir busca"
@@ -298,7 +389,7 @@ export function Header() {
       <div
         className={`fixed top-0 left-0 h-full w-78 bg-white shadow-lg transform ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out z-50 lg:hidden`}
+        } transition-transform duration-300 ease-in-out z-50 md:hidden`}
       >
         <div className="p-6">
           <div className="flex justify-between items-center mb-8">
@@ -322,7 +413,7 @@ export function Header() {
               </svg>
             </button>
           </div>
-          <nav className="flex flex-col space-y-4">{navLinks}</nav>
+          <nav className="flex flex-col space-y-4">{allNavLinks}</nav>
           <div className="pt-4 mt-4 border-t border-gray-200">
             {downloadButton}
           </div>
@@ -331,7 +422,7 @@ export function Header() {
       {isMenuOpen && (
         <div
           onClick={closeMobileMenu}
-          className="fixed inset-0 bg-black opacity-50 z-40 lg:hidden"
+          className="fixed inset-0 bg-black opacity-50 z-40 md:hidden"
         ></div>
       )}
     </header>

@@ -117,7 +117,10 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
     <div className="bg-stone-50 min-h-screen pt-16">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold font-heading text-gray-800">
+          <h1
+            className="route-title text-5xl font-bold font-heading"
+            data-theme={route.theme}
+          >
             {route.name}
           </h1>
           <p className="mt-4 text-xl text-gray-600 max-w-4xl mx-auto">
@@ -125,15 +128,15 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
           </p>
         </div>
 
-        <div className="space-y-12">
+        <div className="space-y-16">
           {route.points.map((point: Point) => (
             <div
               key={point.name}
               id={slugify(point.name)}
               className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 scroll-mt-24"
             >
-              <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold font-heading text-gray-800 mb-4">
+              <div className="p-8">
+                <h3 className="text-3xl font-semibold font-heading tracking-wide text-gray-800 mb-8 text-center border-b pb-4">
                   {point.name}
                 </h3>
 
@@ -143,11 +146,11 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
                   onImageClick={setSelectedImage}
                 />
 
-                <p className="font-sans text-gray-700 mt-6 leading-relaxed">
+                <p className="font-sans text-gray-700 mt-6 text-left leading-relaxed">
                   {point.description}
                 </p>
 
-                <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap items-center justify-center">
+                <div className="mt-8 pt-6 border-t flex flex-wrap items-center justify-center">
                   {point.coordinates && (
                     <a
                       href={`https://www.google.com/maps?q=${point.coordinates.lat},${point.coordinates.lng}`}
