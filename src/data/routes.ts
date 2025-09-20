@@ -78,6 +78,7 @@ import pedrasAssuncao3 from "../assets/roteiros/das-pedras/pico-de-assuncao-03.j
 import pedrasAssuncao4 from "../assets/roteiros/das-pedras/pico-de-assuncao-04.jpg";
 import pedrasAssuncao5 from "../assets/roteiros/das-pedras/pico-de-assuncao-05.jpg";
 import pedrasAssuncao6 from "../assets/roteiros/das-pedras/pico-de-assuncao-06.jpg";
+import mapaRoteiroPedras from "../assets/roteiros/das-pedras/mapa-dos-roteiros-turisticos-das-pedras-de-itapipoca-ce.png";
 
 export const routesDetails = [
   {
@@ -640,6 +641,10 @@ export const routesDetails = [
     description: [
       "O Roteiro das Pedras faz parte da Rota Turística dos Três Climas de Itapipoca e destaca, sobretudo, mirantes e blocos graníticos do Maciço de Uruburetama, sendo pontos de interesse científico, educativo, paisagístico e cultural consolidados no território. Situada na vertente subúmida do maciço de Uruburetama, configura-se com uma bolder. O local apresenta morfologias graníticas, como tafoni e honeycombs (alvéolos) na base do bolder, além de arte rupestre associada.",
     ],
+    descriptionImage: {
+      url: mapaRoteiroPedras,
+      caption: "Mapa dos Roteiros Turísticos das Pedras de Itapipoca (CE)",
+    },
     theme: "sertao",
     points: [
       {
