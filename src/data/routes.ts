@@ -32,6 +32,7 @@ import aguasMerces from "../assets/roteiros/das-aguas/lagoa-das-merces.jpg";
 import aguasHumaita from "../assets/roteiros/das-aguas/lagoa-de-humaita.jpg";
 import aguasMato from "../assets/roteiros/das-aguas/lagoa-do-mato.jpg";
 import aguasMangabeira from "../assets/roteiros/das-aguas/lagoa-da-mangabeira.jpg";
+import mapaRoteiroAguas from "../assets/roteiros/das-aguas/mapa-dos-roteiros-turisticos-das-aguas-de-itapipoca-ce.png";
 
 import preHistoricoLajinhas1 from "../assets/roteiros/pre-historico/sitio-paleontologico-lajinhas-01.jpg";
 import preHistoricoLajinhas2 from "../assets/roteiros/pre-historico/sitio-paleontologico-lajinhas-02.jpg";
@@ -299,6 +300,10 @@ export const routesDetails = [
     description: [
       "O Roteiro das Águas integra a Rota Turística dos Três Climas de Itapipoca, destacando ambientes lacustres, fluviais e aquíferos associados a diferentes compartimentos geomorfológicos, especialmente nas planícies litorâneas, tabuleiros costeiros e vertentes do Maciço de Uruburetama. Os geossítios selecionados apresentam significativos valores ecológicos, científicos, educativos e socioculturais, além de configurarem importantes pontos para o Geoturismo e a conservação ambiental.",
     ],
+    descriptionImage: {
+      url: mapaRoteiroAguas,
+      caption: "Mapa dos Roteiros Turísticos das Águas de Itapipoca (CE)",
+    },
     theme: "serra",
     points: [
       {

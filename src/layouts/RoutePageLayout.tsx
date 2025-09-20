@@ -20,6 +20,10 @@ interface RoutePageLayoutProps {
   readonly route: {
     readonly name: string;
     readonly description: readonly string[];
+    readonly descriptionImage?: {
+      readonly url: string;
+      readonly caption: string;
+    };
     readonly theme: "litoral" | "serra" | "sertao";
     readonly points: readonly Point[];
   };
@@ -128,6 +132,19 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
               <p key={index}>{paragraph}</p>
             ))}
           </div>
+
+          {route.descriptionImage && (
+            <figure className="mt-8 max-w-4xl mx-auto">
+              <img
+                src={route.descriptionImage.url}
+                alt={route.descriptionImage.caption}
+                className="rounded-lg shadow-md mx-auto"
+              />
+              <figcaption className="mt-2 text-sm text-gray-600">
+                {route.descriptionImage.caption}
+              </figcaption>
+            </figure>
+          )}
         </div>
 
         <div className="space-y-16">
@@ -157,7 +174,7 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
                 <div className="mt-8 pt-6 border-t flex flex-wrap items-center justify-center">
                   {point.coordinates && (
                     <a
-                      href={`https://www.google.com/maps?q=${point.coordinates.lat},${point.coordinates.lng}`}
+                      href={`https://google.com/maps/search/?api=1&query=-3.15018,-39.4397473{point.coordinates.lat},${point.coordinates.lng}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-block text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105 ${
