@@ -11,7 +11,7 @@ interface Image {
 
 interface Point {
   readonly name: string;
-  readonly description: string;
+  readonly description: readonly string[];
   readonly coordinates: { readonly lat: number; readonly lng: number };
   readonly images: readonly Image[];
 }
@@ -19,7 +19,7 @@ interface Point {
 interface RoutePageLayoutProps {
   readonly route: {
     readonly name: string;
-    readonly description: string;
+    readonly description: readonly string[];
     readonly theme: "litoral" | "serra" | "sertao";
     readonly points: readonly Point[];
   };
@@ -123,9 +123,11 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
           >
             {route.name}
           </h1>
-          <p className="mt-4 text-xl text-gray-600 max-w-4xl mx-auto">
-            {route.description}
-          </p>
+          <div className="mt-4 text-xl text-gray-600 max-w-4xl mx-auto space-y-4">
+            {route.description.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
         </div>
 
         <div className="space-y-16">
@@ -146,9 +148,11 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
                   onImageClick={setSelectedImage}
                 />
 
-                <p className="font-sans text-gray-700 mt-6 text-left leading-relaxed">
-                  {point.description}
-                </p>
+                <div className="font-sans text-gray-700 mt-6 text-left leading-relaxed space-y-4">
+                  {point.description.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
 
                 <div className="mt-8 pt-6 border-t flex flex-wrap items-center justify-center">
                   {point.coordinates && (
