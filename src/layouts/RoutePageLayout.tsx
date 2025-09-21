@@ -198,7 +198,7 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
           <div className="relative group">
             <div
               ref={scrollContainerRef}
-              className="flex overflow-x-auto space-x-2 p-4 scrollbar-hide"
+              className="flex overflow-x-auto space-x-2 px-12 md:px-16 py-4 scrollbar-hide"
             >
               {route.points.map((point, index) => (
                 <button
@@ -218,7 +218,9 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full flex justify-between px-2 pointer-events-none">
               <button
                 onClick={() => handleScroll("left")}
-                className="pointer-events-auto bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-white opacity-0 group-hover:opacity-100 transition-opacity"
+                className={`pointer-events-auto text-white rounded-full p-1 shadow-lg opacity-80 hover:opacity-100 transition-opacity ${
+                  themeButtonClasses[route.theme]
+                }`}
               >
                 <svg
                   className="w-6 h-6"
@@ -236,7 +238,9 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
               </button>
               <button
                 onClick={() => handleScroll("right")}
-                className="pointer-events-auto bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-white opacity-0 group-hover:opacity-100 transition-opacity"
+                className={`pointer-events-auto text-white rounded-full p-1 shadow-lg opacity-80 hover:opacity-100 transition-opacity ${
+                  themeButtonClasses[route.theme]
+                }`}
               >
                 <svg
                   className="w-6 h-6"
