@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { ImageModal } from "../components/ImageModal";
 import { slugify } from "../utils/slugify";
+import { InfoTooltip } from "../components/common/InfoTooltip";
 
 interface Image {
   readonly url: string;
@@ -179,8 +180,20 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
         </div>
 
         <div className="mb-8">
-          <h2 className="text-xl font-bold mb-4 text-center">
-            Navegue pelos Pontos de Interesse:
+          <h2 className="text-xl font-bold mb-4 text-center flex items-center justify-center">
+            Apos Locais de Interesse Geomorfológico (LIGeom)
+            <InfoTooltip title="O que são Locais de Interesse Geomorfológico (LIGeom)?">
+              <p>
+                Um Local de Interesse Geomorfológico (LIGeom) é uma área onde as
+                formas do relevo e os processos que as criaram possuem notável
+                importância, seja ela científica, educacional, turística ou
+                cultural.
+              </p>
+              <p>
+                Cada ponto neste roteiro é um LIGeom, representando uma peça
+                fundamental da geodiversidade de Itapipoca.
+              </p>
+            </InfoTooltip>
           </h2>
           <div className="relative group">
             <div
