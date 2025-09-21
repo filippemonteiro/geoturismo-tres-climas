@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { ImageModal } from "../components/ImageModal";
 import { slugify } from "../utils/slugify";
+import { InfoTooltip } from "../components/common/InfoTooltip";
 
 interface Image {
   readonly url: string;
@@ -11,7 +12,7 @@ interface Image {
 
 interface Point {
   readonly name: string;
-  readonly description: string;
+  readonly description: readonly string[];
   readonly coordinates: { readonly lat: number; readonly lng: number };
   readonly images: readonly Image[];
 }
@@ -19,13 +20,23 @@ interface Point {
 interface RoutePageLayoutProps {
   readonly route: {
     readonly name: string;
-    readonly description: string;
+    readonly description: readonly string[];
+    readonly descriptionImage?: {
+      readonly url: string;
+      readonly caption: string;
+    };
     readonly theme: "litoral" | "serra" | "sertao";
     readonly points: readonly Point[];
   };
 }
 
 const themeClasses = {
+  litoral: "bg-litoral text-white",
+  serra: "bg-serra text-white",
+  sertao: "bg-sertao text-white",
+};
+
+const themeButtonClasses = {
   litoral: "bg-[#1E88E5] hover:bg-[#1565C0]",
   serra: "bg-[#388E3C] hover:bg-[#2E7D32]",
   sertao: "bg-[#F57C00] hover:bg-[#E65100]",
@@ -97,64 +108,186 @@ const PointImageGallery = ({
 
 export function RoutePageLayout({ route }: RoutePageLayoutProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedPointIndex, setSelectedPointIndex] = useState(0);
   const location = useLocation();
+  const selectedButtonRef = useRef<HTMLButtonElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: "left" | "right") => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      const scrollAmount =
+        direction === "left"
+          ? -container.clientWidth * 0.8
+          : container.clientWidth * 0.8;
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", "");
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
+    const hash = location.hash.replace("#", "");
+    if (hash) {
+      const pointIndex = route.points.findIndex(
+        (p) => slugify(p.name) === hash
+      );
+      if (pointIndex !== -1) {
+        setSelectedPointIndex(pointIndex);
       }
+    } else {
+      setSelectedPointIndex(0);
     }
-  }, [location.hash, route]);
+  }, [location.hash, route.points]);
 
-  if (!route) {
-    return <div>Roteiro não encontrado.</div>;
-  }
+  useEffect(() => {
+    if (selectedButtonRef.current) {
+      selectedButtonRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  }, [selectedPointIndex]);
+
+  const selectedPoint = route.points[selectedPointIndex];
 
   return (
     <div className="bg-stone-50 min-h-screen pt-16">
       <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold font-heading text-gray-800">
+        <div className="text-center mb-12 border-b pb-12">
+          <h1
+            className="route-title text-5xl font-bold font-heading"
+            data-theme={route.theme}
+          >
             {route.name}
           </h1>
-          <p className="mt-4 text-xl text-gray-600 max-w-4xl mx-auto">
-            {route.description}
-          </p>
+          <div className="mt-4 text-xl text-gray-600 max-w-4xl mx-auto space-y-4">
+            {route.description.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+          {route.descriptionImage && (
+            <figure className="mt-8 max-w-4xl mx-auto">
+              <img
+                src={route.descriptionImage.url}
+                alt={route.descriptionImage.caption}
+                className="rounded-lg shadow-md mx-auto"
+              />
+              <figcaption className="mt-2 text-sm text-gray-600">
+                {route.descriptionImage.caption}
+              </figcaption>
+            </figure>
+          )}
         </div>
 
-        <div className="space-y-12">
-          {route.points.map((point: Point) => (
+        <div className="mb-8">
+          <h2 className="text-xl font-bold mb-4 text-center flex items-center justify-center">
+            Apos Locais de Interesse Geomorfológico (LIGeom)
+            <InfoTooltip title="O que são Locais de Interesse Geomorfológico (LIGeom)?">
+              <p>
+                Um Local de Interesse Geomorfológico (LIGeom) é uma área onde as
+                formas do relevo e os processos que as criaram possuem notável
+                importância, seja ela científica, educacional, turística ou
+                cultural.
+              </p>
+              <p>
+                Cada ponto neste roteiro é um LIGeom, representando uma peça
+                fundamental da geodiversidade de Itapipoca.
+              </p>
+            </InfoTooltip>
+          </h2>
+          <div className="relative group">
             <div
-              key={point.name}
-              id={slugify(point.name)}
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto space-x-2 px-12 md:px-16 py-4 scrollbar-hide"
+            >
+              {route.points.map((point, index) => (
+                <button
+                  key={point.name}
+                  ref={selectedPointIndex === index ? selectedButtonRef : null}
+                  onClick={() => setSelectedPointIndex(index)}
+                  className={`py-2 px-4 rounded-full transition-colors whitespace-nowrap border-2 border-transparent ${
+                    selectedPointIndex === index
+                      ? `${themeClasses[route.theme]} font-bold`
+                      : "bg-white hover:bg-stone-100 text-gray-700"
+                  }`}
+                >
+                  {point.name}
+                </button>
+              ))}
+            </div>
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full flex justify-between px-2 pointer-events-none">
+              <button
+                onClick={() => handleScroll("left")}
+                className={`pointer-events-auto text-white rounded-full p-1 shadow-lg opacity-80 hover:opacity-100 transition-opacity ${
+                  themeButtonClasses[route.theme]
+                }`}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 19l-7-7 7-7"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                onClick={() => handleScroll("right")}
+                className={`pointer-events-auto text-white rounded-full p-1 shadow-lg opacity-80 hover:opacity-100 transition-opacity ${
+                  themeButtonClasses[route.theme]
+                }`}
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <main>
+          {selectedPoint && (
+            <div
+              id={slugify(selectedPoint.name)}
               className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 scroll-mt-24"
             >
-              <div className="p-6 text-center">
-                <h3 className="text-2xl font-bold font-heading text-gray-800 mb-4">
-                  {point.name}
+              <div className="p-8">
+                <h3 className="text-3xl font-semibold font-heading tracking-wide text-gray-800 mb-8 text-center border-b pb-4">
+                  {selectedPoint.name}
                 </h3>
-
                 <PointImageGallery
-                  images={point.images}
-                  pointName={point.name}
+                  images={selectedPoint.images}
+                  pointName={selectedPoint.name}
                   onImageClick={setSelectedImage}
                 />
-
-                <p className="font-sans text-gray-700 mt-6 leading-relaxed">
-                  {point.description}
-                </p>
-
-                <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap items-center justify-center">
-                  {point.coordinates && (
+                <div className="font-sans text-gray-700 mt-6 text-left leading-relaxed space-y-4">
+                  {selectedPoint.description.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                  ))}
+                </div>
+                <div className="mt-8 pt-6 border-t flex flex-wrap items-center justify-center">
+                  {selectedPoint.coordinates && (
                     <a
-                      href={`http://googleusercontent.com/maps.google.com/9{point.coordinates.lat},${point.coordinates.lng}`}
+                      href={`http://googleusercontent.com/maps?q=${selectedPoint.coordinates.lat},${selectedPoint.coordinates.lng}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-block text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105 ${
-                        themeClasses[route.theme]
+                        themeButtonClasses[route.theme]
                       }`}
                     >
                       Ver no Mapa
@@ -163,8 +296,8 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          )}
+        </main>
       </div>
       <ImageModal
         src={selectedImage}

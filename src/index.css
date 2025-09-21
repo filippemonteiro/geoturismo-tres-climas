@@ -61,3 +61,22 @@
 .animation-delay-450 {
   animation-delay: 450ms;
 }
+
+.route-title[data-theme="litoral"] {
+  color: var(--cor-litoral);
+}
+.route-title[data-theme="serra"] {
+  color: var(--cor-serra);
+}
+.route-title[data-theme="sertao"] {
+  color: var(--cor-sertao);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

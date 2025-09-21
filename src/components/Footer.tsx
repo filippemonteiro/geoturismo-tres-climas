@@ -64,8 +64,7 @@ export function Footer() {
               Ricardo Matos Machado
             </p>
             <p className="text-sm mt-1">
-              Dissertação de Mestrado apresentada ao Programa de Pós-Graduação
-              em Desenvolvimento e Meio Ambiente (PRODEMA/UFC).
+              Geógrafo e Professor de Geografia Mestre em desenvolvimento.
             </p>
           </div>
         </div>

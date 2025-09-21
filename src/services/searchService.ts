@@ -1,8 +1,8 @@
-import { routesDetails } from '../data/routes';
-import { contentData } from '../data/contentData';
+import { routesDetails } from "../data/routes";
+import { contentData } from "../data/contentData";
 
 export interface PointSearchResult {
-  type: 'point';
+  type: "point";
   routeName: string;
   routeSlug: string;
   point: {
@@ -12,7 +12,7 @@ export interface PointSearchResult {
 }
 
 export interface PageSearchResult {
-  type: 'page';
+  type: "page";
   title: string;
   path: string;
   content: string;
@@ -28,30 +28,39 @@ export function performSearch(query: string): SearchResult[] {
   const lowerCaseQuery = query.toLowerCase();
   const results: SearchResult[] = [];
 
-  routesDetails.forEach(route => {
-    route.points.forEach(point => {
+  routesDetails.forEach((route) => {
+    route.points.forEach((point) => {
       const pointName = point.name.toLowerCase();
-      const pointDescription = point.description.toLowerCase();
-      if (pointName.includes(lowerCaseQuery) || pointDescription.includes(lowerCaseQuery)) {
+      const fullDescription = point.description.join(" ");
+      const pointDescription = fullDescription.toLowerCase();
+
+      if (
+        pointName.includes(lowerCaseQuery) ||
+        pointDescription.includes(lowerCaseQuery)
+      ) {
         results.push({
-          type: 'point',
+          type: "point",
           routeName: route.name,
           routeSlug: route.slug,
           point: {
             name: point.name,
-            description: point.description,
+
+            description: fullDescription,
           },
         });
       }
     });
   });
 
-  contentData.forEach(page => {
+  contentData.forEach((page) => {
     const pageTitle = page.title.toLowerCase();
     const pageContent = page.content.toLowerCase();
-    if (pageTitle.includes(lowerCaseQuery) || pageContent.includes(lowerCaseQuery)) {
+    if (
+      pageTitle.includes(lowerCaseQuery) ||
+      pageContent.includes(lowerCaseQuery)
+    ) {
       results.push({
-        type: 'page',
+        type: "page",
         title: page.title,
         path: page.path,
         content: page.content,
