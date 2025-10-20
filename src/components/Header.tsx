@@ -44,14 +44,14 @@ const Dropdown = ({
     <div className="relative group" ref={containerRef}>
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="text-gray-700 hover:text-[#A67B5B] font-medium transition-colors whitespace-nowrap flex items-center"
+        className="text-gray-700 hover:text-[#A67B5B] font-medium transition-colors text-left flex items-center justify-between w-full py-2"
         aria-haspopup="true"
         aria-expanded={isOpen}
       >
-        {title}
+        <span className="flex-1 mr-2">{title}</span>
         <svg
-          className={`w-4 h-4 ml-1 transition-transform ${
-            isOpen || "group-hover:rotate-180"
+          className={`w-4 h-4 ml-1 transition-transform flex-shrink-0 ${
+            isOpen ? "rotate-180" : ""
           }`}
           fill="none"
           stroke="currentColor"
@@ -94,7 +94,7 @@ export function Header() {
   };
 
   const dropdownLinkClasses =
-    "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#A67B5B]";
+    "block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#A67B5B] whitespace-normal";
 
   const allNavLinks = (
     <>

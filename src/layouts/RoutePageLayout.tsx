@@ -198,7 +198,7 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
           <div className="relative group">
             <div
               ref={scrollContainerRef}
-              className="flex overflow-x-auto space-x-2 px-12 md:px-16 py-4 scrollbar-hide"
+              className="flex overflow-x-auto space-x-2 px-4 sm:px-8 md:px-16 py-4 scrollbar-hide"
             >
               {route.points.map((point, index) => (
                 <button
@@ -215,7 +215,7 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
                 </button>
               ))}
             </div>
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full flex justify-between px-2 pointer-events-none">
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-full flex justify-between px-1 sm:px-2 pointer-events-none">
               <button
                 onClick={() => handleScroll("left")}
                 className={`pointer-events-auto text-white rounded-full p-1 shadow-lg opacity-80 hover:opacity-100 transition-opacity ${
@@ -283,7 +283,7 @@ export function RoutePageLayout({ route }: RoutePageLayoutProps) {
                 <div className="mt-8 pt-6 border-t flex flex-wrap items-center justify-center">
                   {selectedPoint.coordinates && (
                     <a
-                      href={`http://googleusercontent.com/maps?q=${selectedPoint.coordinates.lat},${selectedPoint.coordinates.lng}`}
+                      href={`https://www.google.com/maps/search/?api=1&query=${selectedPoint.coordinates.lat},${selectedPoint.coordinates.lng}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`inline-block text-white font-bold text-sm py-2 px-4 rounded-full transition-transform hover:scale-105 ${
